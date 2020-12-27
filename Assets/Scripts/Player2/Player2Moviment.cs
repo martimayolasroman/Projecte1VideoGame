@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
 
-public class PlayerMovment : MonoBehaviour
+public class Player2Moviment : MonoBehaviour
 {
-    public static PlayerMovment instance;
+    public static Player2Moviment instance;
     private Collisions coll;
     private Rigidbody2D rb;
     [HideInInspector]
@@ -16,7 +16,7 @@ public class PlayerMovment : MonoBehaviour
 
     public float speed = 10;
     public float jumpForce = 10;
-   
+
 
     public float fallGravity = 1.5f;
     public float lowJumpGravity = 1f;
@@ -38,10 +38,11 @@ public class PlayerMovment : MonoBehaviour
     public bool wallSliding = false;
     bool isInCoyoteTime = false;
 
+
+
+
+
    
-
- 
-
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +53,7 @@ public class PlayerMovment : MonoBehaviour
         anim = GetComponent<Animator>();
         extraJumpsAux = extraJumps;
         sr = GetComponent<SpriteRenderer>();
-        
+     
     }
 
     // Update is called once per frame
@@ -104,21 +105,22 @@ public class PlayerMovment : MonoBehaviour
 
         if (enableGravityController) JumpGravityController();
 
-       
+
 
         else wallSliding = false;
 
         //ANIMATIONS
 
-        anim.SetInteger("Speed",(int)rb.velocity.x);
+
+        anim.SetInteger("Speed", (int)rb.velocity.x);
 
         if (groundTouch == true)
         {
-            anim.SetBool("Jumping", false);
+            anim.SetBool("IsJumping", false);
         }
         else
         {
-            anim.SetBool("Jumping", true);
+            anim.SetBool("IsJumping", true);
 
         }
 
@@ -130,10 +132,10 @@ public class PlayerMovment : MonoBehaviour
         {
             groundTouch = true;
             extraJumps = extraJumpsAux;
-           
+
         }
 
-        
+       
 
         if (!coll.onGround && groundTouch) //Frame en el q deixa de tocar el terra
         {
@@ -146,11 +148,16 @@ public class PlayerMovment : MonoBehaviour
         if (rb.velocity.y < -15 && hasDashed == false) rb.velocity = new Vector2(rb.velocity.x, -15);
 
 
+       
+
+
+
 
 
     }
 
 
+ 
     private void Move(Vector2 dir)
     {
         rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
@@ -161,13 +168,13 @@ public class PlayerMovment : MonoBehaviour
 
     private void Jump()
     {
-      
+
 
         rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
         rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
     }
 
-   
+
 
     private void JumpGravityController()
     {
@@ -182,8 +189,10 @@ public class PlayerMovment : MonoBehaviour
         }
     }
 
-  
 
+
+
+   
 
     IEnumerator CoyoteTimer()
     {
@@ -215,7 +224,7 @@ public class PlayerMovment : MonoBehaviour
         sr.flipX = !sr.flipX;
     }
 
-    
+
 
     void StopisInCoyoteTime()
     {
@@ -223,13 +232,16 @@ public class PlayerMovment : MonoBehaviour
     }
 
     //retorna al jugador a l'últim checkpoint guardat
-   
-
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
+       
+
+        if (collision.tag == "disparo")
+        {
+        }
 
        
-    
     }
 
 }
