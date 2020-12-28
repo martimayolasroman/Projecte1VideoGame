@@ -7,7 +7,8 @@ public class PlayerMovment : MonoBehaviour
 {
     public static PlayerMovment instance;
     private Collisions coll;
-    private Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
     [HideInInspector]
     public Animator anim;
     SpriteRenderer sr;
