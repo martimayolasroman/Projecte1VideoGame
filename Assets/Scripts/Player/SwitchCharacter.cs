@@ -8,15 +8,15 @@ public class SwitchCharacter : MonoBehaviour
     // References to Controlled game objects
 
 
-    bool dragon;
 
     public Vector2 pos;
 
     public GameObject Personaje1;
     public GameObject Personaje2;
     bool canshift ;
-    bool dragonn ;
-
+    public bool dragonn ;
+    public bool isTransforming;
+    protected JoyButton2 joyButton2;
 
 
 
@@ -28,18 +28,20 @@ public class SwitchCharacter : MonoBehaviour
         Personaje2.SetActive(false);
         dragonn= true;
         canshift = true;
+        isTransforming = false;
+        joyButton2 = FindObjectOfType<JoyButton2>();
 
-        
+
     }
 
-   IEnumerator changeChar(float seconds,bool dragon)
+    IEnumerator changeChar(float seconds,bool dragon)
     {
+       isTransforming = true;
 
         yield return new WaitForSeconds(seconds);
 
         if (dragon == true)
         {
-            Personaje2.GetComponent<Animator>().SetBool("isChangew", false);
             Personaje1.transform.position = pos;
             Personaje1.SetActive(true);
             Personaje2.SetActive(false);
@@ -50,7 +52,6 @@ public class SwitchCharacter : MonoBehaviour
 
         if (dragon == false)
         {
-            Personaje1.GetComponent<Animator>().SetBool("isChanging", false);
             Personaje2.transform.position = pos;
             Personaje1.SetActive(false);
             Personaje2.SetActive(true);
@@ -58,6 +59,7 @@ public class SwitchCharacter : MonoBehaviour
 
 
         }
+        isTransforming = false;
     }
 
     //public void changeChar(bool dragon)
@@ -89,6 +91,10 @@ public class SwitchCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Input
+        //Touch touch = Input.GetTouch(0);
+        //Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+
         if (dragonn == true)
         {
            
@@ -105,28 +111,27 @@ public class SwitchCharacter : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true) 
+        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true || joyButton2.Pressed && canshift == true) 
         {
-
             canshift = false;
            // changeChar(dragon);
 
             if (dragonn == true)
             {
-                Personaje1.GetComponent<Animator>().SetBool("isChanging", true);
-                StartCoroutine(changeChar(1.4f, false));
+                Personaje1.GetComponent<Animator>().SetTrigger("Change");
+                StartCoroutine(changeChar(0.6f, false));
                 dragonn = false;
             }
 
             else if (dragonn == false)
             {
-                Personaje2.GetComponent<Animator>().SetBool("isChangew", true);
-                StartCoroutine(changeChar(0.9f, true));
+                Personaje2.GetComponent<Animator>().SetTrigger("Change");
+                StartCoroutine(changeChar(0.5f, true));
                 dragonn = true;
 
             }
-            Personaje1.transform.localScale = new Vector3(0.7914316f, 0.8131616f, 0.8834544f);
-            Personaje2.transform.localScale = new Vector3(1f, 1f, 1f);
+            //Personaje1.transform.localScale = new Vector3(1.023534f, 1.127671f, 0.8834544f);
+            //Personaje2.transform.localScale = new Vector3(1.293269f, 1.386773f, 1f);
 
         }
     }

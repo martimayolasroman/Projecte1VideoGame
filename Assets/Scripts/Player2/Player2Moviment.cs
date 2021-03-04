@@ -11,7 +11,8 @@ public class Player2Moviment : MonoBehaviour
     [HideInInspector]
     public Animator anim;
     SpriteRenderer sr;
-
+    public GameObject joystick1;
+    protected JoyButton joyButton;
     //stats
 
     public float speed = 10;
@@ -53,7 +54,7 @@ public class Player2Moviment : MonoBehaviour
         anim = GetComponent<Animator>();
         extraJumpsAux = extraJumps;
         sr = GetComponent<SpriteRenderer>();
-     
+        joyButton = FindObjectOfType<JoyButton>();
     }
 
     // Update is called once per frame
@@ -67,11 +68,11 @@ public class Player2Moviment : MonoBehaviour
 
         // CAMINAR
 
-        if (canMove) Move(dir);
+        if (canMove ) Move(dir);
 
         // SALT
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") || joyButton.Pressed /*|| touchPos.x > 0*/)
         {
             if (coll.onGround && rb.drag == 0)//SALT EN TERRA
             //rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
@@ -104,8 +105,6 @@ public class Player2Moviment : MonoBehaviour
         if (startBuffering) StartCoroutine(JumpBuffering());
 
         if (enableGravityController) JumpGravityController();
-
-
 
         else wallSliding = false;
 
@@ -160,9 +159,9 @@ public class Player2Moviment : MonoBehaviour
  
     private void Move(Vector2 dir)
     {
-        rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
-        if (facingRight == false && dir.x > 0) Flip();
-        else if (facingRight == true && dir.x < 0) Flip();
+        rb.velocity = new Vector2(joystick1.GetComponent<Joystick>().Horizontal * speed, rb.velocity.y);
+        if (facingRight == false && joystick1.GetComponent<Joystick>().Horizontal > 0) Flip();
+        else if (facingRight == true && joystick1.GetComponent<Joystick>().Horizontal < 0) Flip();
 
     }
 

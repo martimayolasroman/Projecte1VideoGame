@@ -17,13 +17,17 @@ public class Parry : MonoBehaviour
     public Animator anim;
     [HideInInspector]
     public Rigidbody2D rb2d;
-
+    public bool isParring;
+    JoyButton3 joyButton;
     void Start()
     {
+        isParring = false;
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         parry.SetActive(false);
         active = true;
+        joyButton = FindObjectOfType<JoyButton3>();
+
     }
 
     // Update is called once per frame
@@ -31,7 +35,7 @@ public class Parry : MonoBehaviour
     {
         if (cooldown <= 0)
         {
-            if (active && Input.GetButtonDown("Fire1"))
+            if (joyButton.Pressed)
             {
                 //Animació de disparar
                 //player.anim.SetTrigger("isAttacking");
@@ -50,8 +54,10 @@ public class Parry : MonoBehaviour
     {
         anim.SetTrigger("Parry");
         parry.SetActive(true);
+        isParring = true;
         yield return new WaitForSeconds(1f);
         parry.SetActive(false);
+        isParring = false;
 
     }
 
