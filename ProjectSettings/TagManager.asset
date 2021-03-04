@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - coin1
+  - coin2
+  - coin3
+  - CoinCounter
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Coin
   - 
   - 
   - 
