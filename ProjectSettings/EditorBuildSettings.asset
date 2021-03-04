@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SeYgaTest.unity
     guid: 29618e74c57d43144b30795e7122a5ce
   - enabled: 1
