@@ -9,6 +9,7 @@ TagManager:
   - coin2
   - coin3
   - CoinCounter
+  - Fire
   layers:
   - Default
   - TransparentFX
