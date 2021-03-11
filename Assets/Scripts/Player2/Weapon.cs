@@ -54,6 +54,7 @@ public class Weapon : MonoBehaviour
     {
         //Instantiate(bullet, transform.position, transform.rotation).GetComponent<Rigidbody2D>().AddForce(Vector2.right * 15, ForceMode2D.Impulse);
         //Instantiate(bullet, transform.position, transform.rotation).GetComponent<Rigidbody2D>().AddForce(shootingDir.normalized * 20, ForceMode2D.Impulse);
+        player.GetComponent<Animator>().SetTrigger("Atak");
         Instantiate(bullet, transform.position, transform.rotation).GetComponent<ShootController>().SetUp(joystickPress.GetComponent<ButtonAttakDragon>().pos);
     }
 
