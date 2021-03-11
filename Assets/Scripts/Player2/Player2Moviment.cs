@@ -182,7 +182,7 @@ public class Player2Moviment : MonoBehaviour
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity) * Time.deltaTime;
         }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (rb.velocity.y > 0 && !joyButton.Pressed)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpGravity) * Time.deltaTime;
         }

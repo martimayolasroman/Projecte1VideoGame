@@ -1,16 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
-public class JoyButton2 : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+
+public class ChangeRunSprite : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [HideInInspector]
-    public bool Pressed;
+  
 
     SwitchCharacter sw;
     public Sprite dragon;
@@ -28,23 +27,15 @@ public class JoyButton2 : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
         if (sw.dragonn)
         {
-            GetComponent<Image>().sprite = dragon;
+            GetComponent<Image>().sprite = knight;
         }
         else
         {
-            GetComponent<Image>().sprite = knight;
+            GetComponent<Image>().sprite = dragon;
 
         }
 
     }
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        Pressed = true;
-    }
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        Pressed = false;
-
-    }
+ 
   
 }
