@@ -18,8 +18,8 @@ public class PlayerMovment : MonoBehaviour
     Parry parry;
     //stats
 
-    public float speed = 10;
-    public float jumpForce = 10;
+    public float speed = 15;
+    public float jumpForce = 15;
    
 
     public float fallGravity = 2f;
@@ -42,6 +42,8 @@ public class PlayerMovment : MonoBehaviour
     public bool wallSliding = false;
     bool isInCoyoteTime = false;
 
+    
+
    
 
  
@@ -58,8 +60,8 @@ public class PlayerMovment : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         parry = GetComponent<Parry>();
         joyButton = FindObjectOfType<JoyButton>();
-        
 
+        
     }
 
     // Update is called once per frame
@@ -82,8 +84,10 @@ public class PlayerMovment : MonoBehaviour
         // SALT
        
 
-        if (Input.GetButtonDown("Jump")|| joyButton.Pressed /*|| touchPos.x > 0*/) 
+        if (((Input.GetKeyDown(KeyCode.Space) )|| joyButton.Pressed)   /*|| touchPos.x > 0*/)
         {
+            
+
             if (coll.onGround && rb.drag == 0)//SALT EN TERRA
             //rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
             //el dash acaba quan esta a l'aire, pero ha fet el dash, ha tocat el terra,
@@ -92,7 +96,7 @@ public class PlayerMovment : MonoBehaviour
             {
                 Jump();
             }
-            else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 vol dir que no esta fen dash
+            else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 
             {
                 Jump();
                 extraJumps--;
@@ -175,11 +179,15 @@ public class PlayerMovment : MonoBehaviour
 
     private void Jump()
     {
-      
+        
 
         rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
         rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
+       
+        
     }
+
+   
 
    
 
