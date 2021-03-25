@@ -12,7 +12,6 @@ public class Player2Moviment : MonoBehaviour
     public Animator anim;
     SpriteRenderer sr;
     public GameObject joystick1;
-    protected JoyButton joyButton;
     //stats
 
     public float speed = 10;
@@ -54,7 +53,6 @@ public class Player2Moviment : MonoBehaviour
         anim = GetComponent<Animator>();
         extraJumpsAux = extraJumps;
         sr = GetComponent<SpriteRenderer>();
-        joyButton = FindObjectOfType<JoyButton>();
     }
 
     // Update is called once per frame
@@ -66,40 +64,15 @@ public class Player2Moviment : MonoBehaviour
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
 
+        Debug.Log(extraJumps);
         // CAMINAR
 
         if (canMove ) Move(dir);
 
         // SALT
-
-        if (Input.GetButtonDown("Jump") || joyButton.Pressed /*|| touchPos.x > 0*/)
+        if (Input.GetButtonDown("Jump")  /*|| touchPos.x > 0*/)
         {
-            if (coll.onGround && rb.drag == 0)//SALT EN TERRA
-            //rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
-            //el dash acaba quan esta a l'aire, pero ha fet el dash, ha tocat el terra,
-            // i no ha recuperat l'us del dash (pq no l ha acabat mentre estava al terra) i pot confodre al jugador,
-            // aixi que faig que mentre estigui fent el dash no pugui saltar per evita
-            {
-                Jump();
-            }
-            else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 vol dir que no esta fen dash
-            {
-                Jump();
-                extraJumps--;
-            }
-
-            else if (isInCoyoteTime)
-            {
-                Jump();
-                isInCoyoteTime = false;
-            }
-
-            //JUMP BUFFERING 
-            //quan vols saltar i encara no estas al terra, es guarda l input per saltar en el frame que toca el terra
-            else
-            {
-                startBuffering = true;
-            }
+            DoJump();
         }
 
         if (startBuffering) StartCoroutine(JumpBuffering());
@@ -173,6 +146,42 @@ public class Player2Moviment : MonoBehaviour
         rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
     }
 
+    public void DoJump()
+    {
+       
+            if (coll.onGround && rb.drag == 0)//SALT EN TERRA
+            //rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
+            //el dash acaba quan esta a l'aire, pero ha fet el dash, ha tocat el terra,
+            // i no ha recuperat l'us del dash (pq no l ha acabat mentre estava al terra) i pot confodre al jugador,
+            // aixi que faig que mentre estigui fent el dash no pugui saltar per evita
+            {
+                Jump();
+            }
+            else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 vol dir que no esta fen dash
+            {
+                Jump();
+                extraJumps--;
+            }
+
+            else if (isInCoyoteTime)
+            {
+                Jump();
+                isInCoyoteTime = false;
+            }
+
+            //if(coll.onGround && extraJumps == 0)
+            // {
+            //extraJumps ==
+            // }
+
+            //JUMP BUFFERING 
+            //quan vols saltar i encara no estas al terra, es guarda l input per saltar en el frame que toca el terra
+            else
+            {
+                startBuffering = true;
+            }
+        }
+    
 
 
     private void JumpGravityController()
@@ -182,7 +191,7 @@ public class Player2Moviment : MonoBehaviour
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity) * Time.deltaTime;
         }
-        else if (rb.velocity.y > 0 && !joyButton.Pressed)
+        else if (rb.velocity.y > 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpGravity) * Time.deltaTime;
         }

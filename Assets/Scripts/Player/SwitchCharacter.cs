@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class SwitchCharacter : MonoBehaviour
 {
@@ -17,8 +19,19 @@ public class SwitchCharacter : MonoBehaviour
     public bool dragonn ;
     public bool isTransforming;
     protected JoyButton2 joyButton2;
-
-
+    public Sprite dragonnn;
+    public Sprite knight;
+    public GameObject JoystickChange;
+    public Button jumpChangeButton;
+    public GameObject runButton;
+    public Sprite runK;
+    public Sprite runD;
+    public Sprite jumpK;
+    public Sprite jumpD;
+    public GameObject Attak1;
+    public GameObject Attak2;
+    public GameObject Attak1B;
+    public GameObject Attak2B;
 
 
     // Start is called before the first frame update
@@ -30,6 +43,10 @@ public class SwitchCharacter : MonoBehaviour
         canshift = true;
         isTransforming = false;
         joyButton2 = FindObjectOfType<JoyButton2>();
+        Attak1.SetActive(true);
+        Attak2.SetActive(false);
+        Attak1B.SetActive(true);
+        Attak2B.SetActive(false);
 
 
     }
@@ -60,6 +77,32 @@ public class SwitchCharacter : MonoBehaviour
 
         }
         isTransforming = false;
+
+        if (!dragonn)
+        {
+            JoystickChange.GetComponent<Image>().sprite = knight;
+            jumpChangeButton.GetComponent<Image>().sprite = jumpD;
+            runButton.GetComponent<Image>().sprite = runD;
+            Attak1.SetActive(false);
+            Attak2.SetActive(true);
+            Attak1B.SetActive(false);
+            Attak2B.SetActive(true);
+
+        }
+        else
+        {
+            JoystickChange.GetComponent<Image>().sprite = dragonnn;
+            jumpChangeButton.GetComponent<Image>().sprite = jumpK;
+            runButton.GetComponent<Image>().sprite = runK;
+            Attak1.SetActive(true);
+            Attak2.SetActive(false);
+            Attak1B.SetActive(true);
+            Attak2B.SetActive(false);
+
+        }
+     
+
+
     }
 
     //public void changeChar(bool dragon)
@@ -130,6 +173,8 @@ public class SwitchCharacter : MonoBehaviour
                 dragonn = true;
 
             }
+
+
             //Personaje1.transform.localScale = new Vector3(1.023534f, 1.127671f, 0.8834544f);
             //Personaje2.transform.localScale = new Vector3(1.293269f, 1.386773f, 1f);
 

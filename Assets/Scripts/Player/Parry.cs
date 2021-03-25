@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Parry : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class Parry : MonoBehaviour
     public Rigidbody2D rb2d;
     public bool isParring;
     JoyButton3 joyButton;
+   public GameObject imgageJoy;
+    bool isDoingColdown = false;
+
+
     void Start()
     {
         isParring = false;
@@ -27,37 +32,62 @@ public class Parry : MonoBehaviour
         parry.SetActive(false);
         active = true;
         joyButton = FindObjectOfType<JoyButton3>();
+        imgageJoy.GetComponent<Image>().fillAmount = 1;
+        cooldown = startCooldown;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (cooldown <= 0)
+        if (cooldown >= startCooldown)
         {
+            isDoingColdown = false;
+
             if (joyButton.Pressed)
             {
                 //Animació de disparar
                 //player.anim.SetTrigger("isAttacking");
                 StartCoroutine(Parrying());
-                cooldown = startCooldown;
+                cooldown = 0;
+
             }
+
         }
         else
         {
             //Decrementem el cooldown
-            cooldown -= Time.deltaTime;
+            cooldown+= Time.deltaTime;
+            if (isDoingColdown)
+            {
+                Debug.Log(cooldown);
+                imgageJoy.GetComponent<Image>().fillAmount = ((cooldown)/startCooldown);
+                isDoingColdown = true;
+            }
         }
+
+        if (!isDoingColdown)
+        {
+            imgageJoy.GetComponent<Image>().fillAmount = 1;
+
+        }
+
     }
 
     IEnumerator Parrying()
     {
         anim.SetTrigger("Parry");
         parry.SetActive(true);
+        isDoingColdown = true;
+
+        imgageJoy.GetComponent<Image>().fillAmount = 0;
+
         isParring = true;
         yield return new WaitForSeconds(1f);
         parry.SetActive(false);
         isParring = false;
+
+
 
     }
 

@@ -12,13 +12,12 @@ public class JoyButton2 : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     [HideInInspector]
     public bool Pressed;
 
-    SwitchCharacter sw;
     public Sprite dragon;
     public Sprite knight;
 
     void Start()
     {
-        sw = FindObjectOfType<SwitchCharacter>();
+      
 
     }
 
@@ -26,15 +25,7 @@ public class JoyButton2 : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     void Update()
     {
 
-        if (sw.dragonn)
-        {
-            GetComponent<Image>().sprite = dragon;
-        }
-        else
-        {
-            GetComponent<Image>().sprite = knight;
-
-        }
+    
 
     }
     public void OnPointerDown(PointerEventData eventData)

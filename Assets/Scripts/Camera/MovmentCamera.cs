@@ -28,7 +28,7 @@ public class MovmentCamera : MonoBehaviour
         var tmp = transform.position;
         tmp.x += (horizontalInput * movementSpeed * Time.deltaTime);
         transform.position = tmp;
-
+        Debug.Log(movementSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

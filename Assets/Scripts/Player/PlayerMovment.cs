@@ -13,14 +13,13 @@ public class PlayerMovment : MonoBehaviour
     public Animator anim;
     SpriteRenderer sr;
     public GameObject joystick1;
-    protected JoyButton joyButton;
 
     Parry parry;
     //stats
 
     public float speed = 10;
     public float jumpForce = 10;
-   
+    private float initspeed;
 
     public float fallGravity = 2f;
     public float lowJumpGravity = 1f;
@@ -57,8 +56,7 @@ public class PlayerMovment : MonoBehaviour
         extraJumpsAux = extraJumps;
         sr = GetComponent<SpriteRenderer>();
         parry = GetComponent<Parry>();
-        joyButton = FindObjectOfType<JoyButton>();
-        
+        initspeed = speed;
 
     }
 
@@ -78,38 +76,51 @@ public class PlayerMovment : MonoBehaviour
         //Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
         // CAMINAR
-        if (canMove && !parry.isParring ) Move(dir);
-        // SALT
-       
-
-        if (Input.GetButtonDown("Jump")|| joyButton.Pressed /*|| touchPos.x > 0*/) 
+        //if (canMove && !parry.isParring ) Move(dir);
+        if(parry.isParring)
         {
-            if (coll.onGround && rb.drag == 0)//SALT EN TERRA
-            //rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
-            //el dash acaba quan esta a l'aire, pero ha fet el dash, ha tocat el terra,
-            // i no ha recuperat l'us del dash (pq no l ha acabat mentre estava al terra) i pot confodre al jugador,
-            // aixi que faig que mentre estigui fent el dash no pugui saltar per evita
-            {
-                Jump();
-            }
-            else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 vol dir que no esta fen dash
-            {
-                Jump();
-                extraJumps--;
-            }
+            speed = 0;
+        }
+        else
+        {
+            speed = initspeed;
+            if (canMove && !parry.isParring) Move(dir);
 
-            else if (isInCoyoteTime)
-            {
-                Jump();
-                isInCoyoteTime = false;
-            }
+        }
 
-            //JUMP BUFFERING 
-            //quan vols saltar i encara no estas al terra, es guarda l input per saltar en el frame que toca el terra
-            else
-            {
-                startBuffering = true;
-            }
+
+        // SALT
+
+
+        if (Input.GetButtonDown("Jump")/*|| touchPos.x > 0*/) 
+        {
+            //if (coll.onGround && rb.drag == 0)//SALT EN TERRA
+            ////rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
+            ////el dash acaba quan esta a l'aire, pero ha fet el dash, ha tocat el terra,
+            //// i no ha recuperat l'us del dash (pq no l ha acabat mentre estava al terra) i pot confodre al jugador,
+            //// aixi que faig que mentre estigui fent el dash no pugui saltar per evita
+            //{
+            //    Jump();
+            //}
+            //else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 vol dir que no esta fen dash
+            //{
+            //    Jump();
+            //    extraJumps--;
+            //}
+
+            //else if (isInCoyoteTime)
+            //{
+            //    Jump();
+            //    isInCoyoteTime = false;
+            //}
+
+            ////JUMP BUFFERING 
+            ////quan vols saltar i encara no estas al terra, es guarda l input per saltar en el frame que toca el terra
+            //else
+            //{
+            //    startBuffering = true;
+            //}
+            DoJump();
         }
 
         if (startBuffering) StartCoroutine(JumpBuffering());
@@ -181,7 +192,42 @@ public class PlayerMovment : MonoBehaviour
         rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
     }
 
-   
+    public void DoJump()
+    {
+
+        if (coll.onGround && rb.drag == 0)//SALT EN TERRA
+                                          //rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
+                                          //el dash acaba quan esta a l'aire, pero ha fet el dash, ha tocat el terra,
+                                          // i no ha recuperat l'us del dash (pq no l ha acabat mentre estava al terra) i pot confodre al jugador,
+                                          // aixi que faig que mentre estigui fent el dash no pugui saltar per evita
+        {
+            Jump();
+        }
+        else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 vol dir que no esta fen dash
+        {
+            Jump();
+            extraJumps--;
+        }
+
+        else if (isInCoyoteTime)
+        {
+            Jump();
+            isInCoyoteTime = false;
+        }
+
+        //if(coll.onGround && extraJumps == 0)
+        // {
+        //extraJumps ==
+        // }
+
+        //JUMP BUFFERING 
+        //quan vols saltar i encara no estas al terra, es guarda l input per saltar en el frame que toca el terra
+        else
+        {
+            startBuffering = true;
+        }
+    }
+
 
     private void JumpGravityController()
     {

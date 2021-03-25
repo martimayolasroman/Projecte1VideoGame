@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  lifeTime: 1
+  lifeTime: 3
   anim: {fileID: 0}
   rb2d: {fileID: 0}
 --- !u!95 &4603618004693963120
