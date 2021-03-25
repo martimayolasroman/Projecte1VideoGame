@@ -10,6 +10,7 @@ TagManager:
   - coin3
   - CoinCounter
   - Fire
+  - ChangeSpeed
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,8 @@ public class ButtonAttakDragon : MonoBehaviour, IPointerUpHandler, IPointerDownH
     [HideInInspector]
     public  Vector2 pos;
     public GameObject joystick;
+
+ 
     void Start()
     {
     }

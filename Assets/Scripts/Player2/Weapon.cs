@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class Weapon : MonoBehaviour
@@ -13,6 +14,8 @@ public class Weapon : MonoBehaviour
     public GameObject joystickPress;
     [Header("Time of cooldown")]
     public float startCooldown;
+    public GameObject handle;
+    bool isDoingColdown = false;
 
     public Player2Moviment player;
     
@@ -21,7 +24,9 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         active = true;
-        
+        cooldown = startCooldown;
+        handle.GetComponent<Image>().fillAmount = 1;
+
     }
 
     private void Update()
@@ -33,20 +38,32 @@ public class Weapon : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 
-        if (cooldown <= 0)
+        if (cooldown >= startCooldown)
         {
+            isDoingColdown = false;
+
             if (active && joystickPress.GetComponent<ButtonAttakDragon>().Pressed)
             {
                 //Animació de disparar
                 //player.anim.SetTrigger("isAttacking");
                 Shoot();
-                cooldown = startCooldown;
+                cooldown = 0;
             }
         }
         else
         {
-            //Decrementem el cooldown
-            cooldown -= Time.deltaTime;
+            cooldown += Time.deltaTime;
+            if (isDoingColdown)
+            {
+                Debug.Log(cooldown);
+                handle.GetComponent<Image>().fillAmount = ((cooldown) / startCooldown);
+                isDoingColdown = true;
+            }
+        }
+        if (!isDoingColdown)
+        {
+            handle.GetComponent<Image>().fillAmount = 1;
+
         }
     }
 
@@ -56,6 +73,9 @@ public class Weapon : MonoBehaviour
         //Instantiate(bullet, transform.position, transform.rotation).GetComponent<Rigidbody2D>().AddForce(shootingDir.normalized * 20, ForceMode2D.Impulse);
         player.GetComponent<Animator>().SetTrigger("Atak");
         Instantiate(bullet, transform.position, transform.rotation).GetComponent<ShootController>().SetUp(joystickPress.GetComponent<ButtonAttakDragon>().pos);
+        handle.GetComponent<Image>().fillAmount = 0;
+        isDoingColdown = true;
+
     }
 
     public void Activate()
