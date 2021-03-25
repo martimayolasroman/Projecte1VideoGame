@@ -5,13 +5,13 @@ using UnityEngine;
 public class MovmentCamera : MonoBehaviour
 {
 
-    private float movementSpeed = 1f;
+    public float movementSpeed = 1f;
     int counterSpeed = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        movementSpeed = 1f;
+        movementSpeed = 3f;
         counterSpeed = 0;
     }
 

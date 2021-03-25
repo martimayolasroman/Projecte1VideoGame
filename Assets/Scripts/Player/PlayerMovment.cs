@@ -41,6 +41,8 @@ public class PlayerMovment : MonoBehaviour
     public bool wallSliding = false;
     bool isInCoyoteTime = false;
 
+    
+
    
 
  
@@ -186,10 +188,12 @@ public class PlayerMovment : MonoBehaviour
 
     private void Jump()
     {
-      
+        
 
         rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
         rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
+       
+        
     }
 
     public void DoJump()

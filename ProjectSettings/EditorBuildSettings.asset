@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
+=======
+    path: Assets/Scenes/LevelSelector.unity
+    guid: 4c8fac28636de704591199342e413f51
+  - enabled: 1
+>>>>>>> develop
     path: Assets/Scenes/SeYgaTest.unity
     guid: 29618e74c57d43144b30795e7122a5ce
   - enabled: 0
