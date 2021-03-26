@@ -40,6 +40,7 @@ public class PlayerMovment : MonoBehaviour
     bool startBuffering = false;
     public bool wallSliding = false;
     bool isInCoyoteTime = false;
+    bool isStuned = false;
 
     
 
@@ -72,6 +73,7 @@ public class PlayerMovment : MonoBehaviour
         float xRaw = Input.GetAxisRaw("Horizontal");
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
+        Debug.Log("speed: "+speed);
 
         //Input
         //Touch touch = Input.GetTouch(0);
@@ -79,11 +81,11 @@ public class PlayerMovment : MonoBehaviour
 
         // CAMINAR
         //if (canMove && !parry.isParring ) Move(dir);
-        if(parry.isParring)
+        if(parry.isParring )
         {
             speed = 0;
         }
-        else
+        else if (parry.isParring == false && isStuned == false)
         {
             speed = initspeed;
             if (canMove && !parry.isParring) Move(dir);
@@ -294,6 +296,21 @@ public class PlayerMovment : MonoBehaviour
 
        
     
+    }
+
+    public void StopPlayer()
+    {
+        isStuned = true;
+        speed = 0;
+       
+        Invoke("RestarSpeed", 1);
+
+    }
+
+    public void RestarSpeed()
+    {
+        isStuned = false;
+        speed = 10;
     }
 
 

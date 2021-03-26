@@ -12,6 +12,7 @@ public class Player2Moviment : MonoBehaviour
     public Animator anim;
     SpriteRenderer sr;
     public GameObject joystick1;
+  
     //stats
 
     public float speed = 10;
@@ -250,6 +251,19 @@ public class Player2Moviment : MonoBehaviour
         }
 
        
+    }
+    public void StopPlayer()
+    {
+       
+        speed = 0;
+        Invoke("RestarSpeed", 1);
+
+    }
+
+    public void RestarSpeed()
+    {
+       
+        speed = 10;
     }
 
 }

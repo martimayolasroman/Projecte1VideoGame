@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class RockKill : MonoBehaviour
+public class FireBulletStun : MonoBehaviour
 {
-
     public GameObject Knight;
     public GameObject Dragon;
     Animator KnightStunAnim;
@@ -20,12 +18,14 @@ public class RockKill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == ("Player")){
+        if (collision.gameObject.tag == ("Player"))
+        {
 
             //ResetScene de moment
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -34,6 +34,6 @@ public class RockKill : MonoBehaviour
             Debug.Log("Stun");
 
         }
-            
+
     }
 }
