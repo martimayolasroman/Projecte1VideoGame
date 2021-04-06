@@ -60,7 +60,7 @@ public class Parry : MonoBehaviour
             cooldown+= Time.deltaTime;
             if (isDoingColdown)
             {
-                Debug.Log(cooldown);
+
                 imgageJoy.GetComponent<Image>().fillAmount = ((cooldown)/startCooldown);
                 isDoingColdown = true;
             }

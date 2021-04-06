@@ -56,7 +56,6 @@ public class SwitchCharacter : MonoBehaviour
 
     public IEnumerator changeChar(float seconds,bool dragon)
     {
-        Debug.Log("Change");
        isTransforming = true;
 
         yield return new WaitForSeconds(seconds);

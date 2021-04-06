@@ -28,7 +28,7 @@ public class PlayerMovment : MonoBehaviour
     private int extraJumpsAux;
 
     public float coyoteTime = 0.01f;
-
+    Vector2  gravity;
     //bools
 
     public bool hasDashed = false;
@@ -56,6 +56,7 @@ public class PlayerMovment : MonoBehaviour
         extraJumpsAux = extraJumps;
         sr = GetComponent<SpriteRenderer>();
         parry = GetComponent<Parry>();
+        gravity = Physics2D.gravity;
     }
 
     // Update is called once per frame
@@ -67,7 +68,7 @@ public class PlayerMovment : MonoBehaviour
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
 
-        Debug.Log(extraJumps);
+        Physics2D.gravity = new Vector2(0, -9.8f);
         // CAMINAR
 
         if (canMove && !parry.isParring) Move(dir);

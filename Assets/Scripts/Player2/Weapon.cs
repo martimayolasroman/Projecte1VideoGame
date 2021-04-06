@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour
             cooldown += Time.deltaTime;
             if (isDoingColdown)
             {
-                Debug.Log(cooldown);
+
                 handle.GetComponent<Image>().fillAmount = ((cooldown) / startCooldown);
                 isDoingColdown = true;
             }

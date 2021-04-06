@@ -23,7 +23,7 @@ public class PlayerDieFire : MonoBehaviour
         {
             //Player Mort;
 
-
+            gameObject.GetComponent<Player2Moviment>().PlayerDie();
             //Reset Scene
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

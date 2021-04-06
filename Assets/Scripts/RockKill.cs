@@ -32,7 +32,6 @@ public class RockKill : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             KnightStunAnim.SetBool("isStuned", true);
             DragonStunAnim.SetBool("isStuned", true);
-            Debug.Log("Stun");
 
 
         }

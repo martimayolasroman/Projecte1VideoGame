@@ -67,7 +67,7 @@ public class Player2Moviment : MonoBehaviour
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
 
-        Debug.Log(extraJumps);
+        Debug.Log(Physics2D.gravity.y);
         // CAMINAR
 
         if (canMove ) Move(dir);
@@ -194,8 +194,7 @@ public class Player2Moviment : MonoBehaviour
 
         if (rb.velocity.y < 0 && Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("pplaning");
-            Physics2D.gravity = initGravity * 0.2f;
+            Physics2D.gravity = new Vector2(0, -9.8f) * 0.2f;
         }
         else if (rb.velocity.y < 0)
         {
@@ -208,7 +207,7 @@ public class Player2Moviment : MonoBehaviour
         }
         else
         {
-            Physics2D.gravity = initGravity;
+            Physics2D.gravity = new Vector2(0, -9.8f); 
 
         }
     }
@@ -248,7 +247,10 @@ public class Player2Moviment : MonoBehaviour
         sr.flipX = !sr.flipX;
     }
 
-
+    public void PlayerDie()
+    {
+        Physics2D.gravity = new Vector2 (0, -9.8f);
+    }
 
     void StopisInCoyoteTime()
     {
