@@ -33,6 +33,9 @@ public class SwitchCharacter : MonoBehaviour
     public GameObject Attak1B;
     public GameObject Attak2B;
 
+    public GameObject BlackFiltre;
+   // public Image BlackSwich;
+    public EnergyBar energyBarScript;
 
     // Start is called before the first frame update
     void Start()
@@ -47,12 +50,13 @@ public class SwitchCharacter : MonoBehaviour
         Attak2.SetActive(false);
         Attak1B.SetActive(true);
         Attak2B.SetActive(false);
-
+        BlackFiltre.GetComponent<Image>();
 
     }
 
-    IEnumerator changeChar(float seconds,bool dragon)
+    public IEnumerator changeChar(float seconds,bool dragon)
     {
+        Debug.Log("Change");
        isTransforming = true;
 
         yield return new WaitForSeconds(seconds);
@@ -138,6 +142,16 @@ public class SwitchCharacter : MonoBehaviour
         //Touch touch = Input.GetTouch(0);
         //Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
+        if(energyBarScript.energy == 100)
+        {
+            BlackFiltre.SetActive(false); 
+
+        }
+        if(energyBarScript.energy < 100 && dragonn)
+        {
+            BlackFiltre.SetActive(true);
+        }
+
         if (dragonn == true)
         {
            
@@ -154,7 +168,7 @@ public class SwitchCharacter : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true || joyButton2.Pressed && canshift == true) 
+        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true || joyButton2.Pressed && canshift == true && energyBarScript.energy == 100 || ((Input.GetKeyDown(KeyCode.LeftShift) && !dragonn && canshift == true)) || (joyButton2.Pressed && canshift == true && !dragonn)) 
         {
             canshift = false;
            // changeChar(dragon);
@@ -179,5 +193,7 @@ public class SwitchCharacter : MonoBehaviour
             //Personaje2.transform.localScale = new Vector3(1.293269f, 1.386773f, 1f);
 
         }
+
+
     }
 }
