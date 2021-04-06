@@ -18,7 +18,7 @@ public class LevelSlectorButtons : MonoBehaviour
 
     public void Level1()
     {
-        SceneManager.LoadScene("MartiScene");
+        SceneManager.LoadScene("Marti");
     }
     
     public void Level2()
