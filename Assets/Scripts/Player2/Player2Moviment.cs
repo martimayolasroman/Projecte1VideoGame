@@ -27,6 +27,7 @@ public class Player2Moviment : MonoBehaviour
     private int extraJumpsAux;
 
     public float coyoteTime = 0.01f;
+    private Vector2 initGravity;
 
     //bools
 
@@ -54,6 +55,7 @@ public class Player2Moviment : MonoBehaviour
         anim = GetComponent<Animator>();
         extraJumpsAux = extraJumps;
         sr = GetComponent<SpriteRenderer>();
+        initGravity = Physics2D.gravity;
     }
 
     // Update is called once per frame
@@ -190,13 +192,24 @@ public class Player2Moviment : MonoBehaviour
     private void JumpGravityController()
     {
 
-        if (rb.velocity.y < 0)
+        if (rb.velocity.y < 0 && Input.GetKey(KeyCode.Space))
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity) * Time.deltaTime;
+            Debug.Log("pplaning");
+            Physics2D.gravity = initGravity * 0.2f;
+        }
+        else if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector2.up * initGravity.y * (fallGravity) * Time.deltaTime;
+
         }
         else if (rb.velocity.y > 0)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpGravity) * Time.deltaTime;
+            rb.velocity += Vector2.up * initGravity.y * (lowJumpGravity) * Time.deltaTime;
+        }
+        else
+        {
+            Physics2D.gravity = initGravity;
+
         }
     }
 
