@@ -61,7 +61,7 @@ public class EnergyBar : MonoBehaviour
     {
         
         //Quant passi temps restar barra.
-        energy=energy-0.04f;
+        energy=energy-0.1f;
         if (energy <= 0)
         {
             energy = 0;
