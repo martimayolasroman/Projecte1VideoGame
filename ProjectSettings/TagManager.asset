@@ -11,6 +11,7 @@ TagManager:
   - CoinCounter
   - Fire
   - ChangeSpeed
+  - Parry
   layers:
   - Default
   - TransparentFX

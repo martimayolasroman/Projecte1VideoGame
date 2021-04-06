@@ -81,9 +81,11 @@ public class Parry : MonoBehaviour
         isDoingColdown = true;
 
         imgageJoy.GetComponent<Image>().fillAmount = 0;
-
+        transform.gameObject.tag = "Parry";
         isParring = true;
         yield return new WaitForSeconds(1f);
+        transform.gameObject.tag = "Player";
+
         parry.SetActive(false);
         isParring = false;
 

@@ -38,7 +38,7 @@ public class Player2Moviment : MonoBehaviour
     bool startBuffering = false;
     public bool wallSliding = false;
     bool isInCoyoteTime = false;
-
+    bool canJump = true;
 
 
 
@@ -142,9 +142,11 @@ public class Player2Moviment : MonoBehaviour
     private void Jump()
     {
 
-
-        rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
-        rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
+        if (canJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
+            rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
+        }
     }
 
     public void DoJump()
@@ -242,21 +244,14 @@ public class Player2Moviment : MonoBehaviour
 
     //retorna al jugador a l'últim checkpoint guardat
   
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       
 
-        if (collision.tag == "disparo")
-        {
-        }
 
-       
-    }
     public void StopPlayer()
     {
        
         speed = 0;
         Invoke("RestarSpeed", 1);
+        canJump = false;
 
     }
 
@@ -264,6 +259,8 @@ public class Player2Moviment : MonoBehaviour
     {
        
         speed = 10;
+        canJump = true;
+
     }
 
 }

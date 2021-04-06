@@ -7,21 +7,20 @@ public class PlayerMovment : MonoBehaviour
 {
     public static PlayerMovment instance;
     private Collisions coll;
-    [HideInInspector]
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     [HideInInspector]
     public Animator anim;
     SpriteRenderer sr;
     public GameObject joystick1;
+    public Parry parry;
 
-    Parry parry;
     //stats
 
     public float speed = 10;
     public float jumpForce = 10;
-    private float initspeed;
 
-    public float fallGravity = 2f;
+
+    public float fallGravity = 1.5f;
     public float lowJumpGravity = 1f;
 
 
@@ -40,13 +39,11 @@ public class PlayerMovment : MonoBehaviour
     bool startBuffering = false;
     public bool wallSliding = false;
     bool isInCoyoteTime = false;
-    bool isStuned = false;
+    bool canJump = true;
 
-    
 
-   
 
- 
+
 
 
     // Start is called before the first frame update
@@ -59,77 +56,25 @@ public class PlayerMovment : MonoBehaviour
         extraJumpsAux = extraJumps;
         sr = GetComponent<SpriteRenderer>();
         parry = GetComponent<Parry>();
-        initspeed = speed;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         float xRaw = Input.GetAxisRaw("Horizontal");
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
-        Debug.Log("speed: "+speed);
 
-        //Input
-        //Touch touch = Input.GetTouch(0);
-        //Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-
+        Debug.Log(extraJumps);
         // CAMINAR
-        //if (canMove && !parry.isParring ) Move(dir);
-<<<<<<< Updated upstream
-        if(parry.isParring )
-=======
 
-        Debug.Log(speed);
-        if(parry.isParring)
->>>>>>> Stashed changes
-        {
-            speed = 0;
-        }
-        else if (parry.isParring == false && isStuned == false)
-        {
-            speed = initspeed;
-            if (canMove && !parry.isParring) Move(dir);
-
-        }
-
+        if (canMove && !parry.isParring) Move(dir);
 
         // SALT
-
-
-        if (Input.GetButtonDown("Jump")/*|| touchPos.x > 0*/) 
+        if (Input.GetButtonDown("Jump")  /*|| touchPos.x > 0*/)
         {
-            //if (coll.onGround && rb.drag == 0)//SALT EN TERRA
-            ////rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
-            ////el dash acaba quan esta a l'aire, pero ha fet el dash, ha tocat el terra,
-            //// i no ha recuperat l'us del dash (pq no l ha acabat mentre estava al terra) i pot confodre al jugador,
-            //// aixi que faig que mentre estigui fent el dash no pugui saltar per evita
-            //{
-            //    Jump();
-            //}
-            //else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 vol dir que no esta fen dash
-            //{
-            //    Jump();
-            //    extraJumps--;
-            //}
-
-            //else if (isInCoyoteTime)
-            //{
-            //    Jump();
-            //    isInCoyoteTime = false;
-            //}
-
-            ////JUMP BUFFERING 
-            ////quan vols saltar i encara no estas al terra, es guarda l input per saltar en el frame que toca el terra
-            //else
-            //{
-            //    startBuffering = true;
-            //}
             DoJump();
         }
 
@@ -137,21 +82,20 @@ public class PlayerMovment : MonoBehaviour
 
         if (enableGravityController) JumpGravityController();
 
-       
-
         else wallSliding = false;
 
         //ANIMATIONS
 
-        anim.SetInteger("Speed",(int)rb.velocity.x);
+
+        anim.SetInteger("Speed", (int)rb.velocity.x);
 
         if (groundTouch == true)
         {
-            anim.SetBool("Jumping", false);
+            anim.SetBool("IsJumping", false);
         }
         else
         {
-            anim.SetBool("Jumping", true);
+            anim.SetBool("IsJumping", true);
 
         }
 
@@ -163,10 +107,10 @@ public class PlayerMovment : MonoBehaviour
         {
             groundTouch = true;
             extraJumps = extraJumpsAux;
-           
+
         }
 
-        
+
 
         if (!coll.onGround && groundTouch) //Frame en el q deixa de tocar el terra
         {
@@ -181,13 +125,16 @@ public class PlayerMovment : MonoBehaviour
 
 
 
+
+
+
+
     }
+
 
 
     private void Move(Vector2 dir)
     {
-        
-        //rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
         rb.velocity = new Vector2(joystick1.GetComponent<Joystick>().Horizontal * speed, rb.velocity.y);
         if (facingRight == false && joystick1.GetComponent<Joystick>().Horizontal > 0) Flip();
         else if (facingRight == true && joystick1.GetComponent<Joystick>().Horizontal < 0) Flip();
@@ -196,12 +143,12 @@ public class PlayerMovment : MonoBehaviour
 
     private void Jump()
     {
-        
 
-        rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
-        rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
-       
-        
+        if (canJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
+            rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
+        }
     }
 
     public void DoJump()
@@ -241,6 +188,7 @@ public class PlayerMovment : MonoBehaviour
     }
 
 
+
     private void JumpGravityController()
     {
 
@@ -248,13 +196,15 @@ public class PlayerMovment : MonoBehaviour
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity) * Time.deltaTime;
         }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (rb.velocity.y > 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpGravity) * Time.deltaTime;
         }
     }
 
-  
+
+
+
 
 
     IEnumerator CoyoteTimer()
@@ -287,7 +237,7 @@ public class PlayerMovment : MonoBehaviour
         sr.flipX = !sr.flipX;
     }
 
-    
+
 
     void StopisInCoyoteTime()
     {
@@ -295,29 +245,24 @@ public class PlayerMovment : MonoBehaviour
     }
 
     //retorna al jugador a l'últim checkpoint guardat
-   
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
 
-       
-    
-    }
 
     public void StopPlayer()
     {
-        isStuned = true;
+
         speed = 0;
-       
         Invoke("RestarSpeed", 1);
+        canJump = false;
 
     }
 
     public void RestarSpeed()
     {
-        isStuned = false;
-        speed = 10;
-    }
 
+        speed = 10;
+        canJump = true;
+
+    }
 
 }

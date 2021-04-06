@@ -20,12 +20,13 @@ public class RockKill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == ("Player")){
+        if (collision.gameObject.tag == ("Player"))
+        {
 
             //ResetScene de moment
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -33,7 +34,8 @@ public class RockKill : MonoBehaviour
             DragonStunAnim.SetBool("isStuned", true);
             Debug.Log("Stun");
 
+
         }
-            
+      
     }
 }

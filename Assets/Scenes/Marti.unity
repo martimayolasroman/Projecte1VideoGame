@@ -3047,7 +3047,8 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1561647967, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
 --- !u!224 &577012545 stripped
 RectTransform:
@@ -3079,6 +3080,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281aa37529b226144914475f64381a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &577012549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577012546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14abf31fb3c19eb419b92e7d2753f1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initPos: {x: 0, y: 0, z: 0}
+  handle: {fileID: 577012547}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
 --- !u!1 &653307009
 GameObject:
   m_ObjectHideFlags: 0
@@ -5222,6 +5239,16 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpForce
       value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037084535299998260, guid: 3642b0db1f15f424db2bc5292bbfba12,
+        type: 3}
+      propertyPath: handlejoystick
+      value: 
+      objectReference: {fileID: 577012547}
+    - target: {fileID: 2037084535299998260, guid: 3642b0db1f15f424db2bc5292bbfba12,
+        type: 3}
+      propertyPath: parry
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2037084535905614591, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
