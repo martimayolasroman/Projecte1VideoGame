@@ -81,7 +81,13 @@ public class PlayerMovment : MonoBehaviour
 
         // CAMINAR
         //if (canMove && !parry.isParring ) Move(dir);
+<<<<<<< Updated upstream
         if(parry.isParring )
+=======
+
+        Debug.Log(speed);
+        if(parry.isParring)
+>>>>>>> Stashed changes
         {
             speed = 0;
         }
