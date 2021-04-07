@@ -12,6 +12,7 @@ TagManager:
   - Fire
   - ChangeSpeed
   - Parry
+  - FireBall
   layers:
   - Default
   - TransparentFX

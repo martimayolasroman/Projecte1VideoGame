@@ -146,7 +146,7 @@ public class SwitchCharacter : MonoBehaviour
             BlackFiltre.SetActive(false); 
 
         }
-        if(energyBarScript.energy < 100 && dragonn)
+        if(energyBarScript.energy <=0 && dragonn)
         {
             BlackFiltre.SetActive(true);
         }
@@ -167,7 +167,7 @@ public class SwitchCharacter : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true || joyButton2.Pressed && canshift == true && energyBarScript.energy == 100 || ((Input.GetKeyDown(KeyCode.LeftShift) && !dragonn && canshift == true)) || (joyButton2.Pressed && canshift == true && !dragonn)) 
+        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true || joyButton2.Pressed && canshift == true && energyBarScript.energy >0 || ((Input.GetKeyDown(KeyCode.LeftShift) && !dragonn && canshift == true)) || (joyButton2.Pressed && canshift == true && !dragonn)) 
         {
             canshift = false;
            // changeChar(dragon);

@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Marti.unity
     guid: 5a6a2e62d8ad7cd47861091a0048fcdb
-  - enabled: 1
-    path: Assets/Scenes/SeYgaTest.unity
-    guid: 29618e74c57d43144b30795e7122a5ce
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
