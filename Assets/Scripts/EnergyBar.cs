@@ -37,14 +37,14 @@ public class EnergyBar : MonoBehaviour
         EnergyBarFiller();
 
 
-        if (!dragon) { 
-            if(timeLeft > 0)
-                {
-                 timeLeft -= Time.deltaTime;
-               
-                 DecrisBar(); 
-                   
-             }
+        if (!dragon) {
+            if (timeLeft > 0)
+            {
+                timeLeft -= Time.deltaTime;
+
+                DecrisBar();
+
+            }
         }
     }
 
@@ -55,6 +55,11 @@ public class EnergyBar : MonoBehaviour
         {
             EnergyPoints[i].enabled = !DisplayEnergyPoints(energy, i);
         }
+    }
+
+    public void UpdateTime()
+    {
+        
     }
 
     public void DecrisBar()

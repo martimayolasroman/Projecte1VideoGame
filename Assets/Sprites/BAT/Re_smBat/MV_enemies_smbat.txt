@@ -1,0 +1,7 @@
+<Floating>
+<Floating Speed: 15>
+<Floating Rate: 0.03>
+<Sideview Battler: MV_enemies_smbat>
+<Sideview Show Shadow>
+<Sideview Shadow Width: 180%>
+<Sideview Shadow Height: 180%>
