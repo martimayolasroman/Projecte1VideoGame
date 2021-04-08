@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeYgaTest.unity
     guid: 200253f267f11cb438aac12ce5b0b189
+  - enabled: 1
+    path: Assets/Scenes/PrototypLevel.unity
+    guid: 12850a301cb00f74fa9127093f7d8979
   m_configObjects: {}
