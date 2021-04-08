@@ -1943,7 +1943,7 @@ PrefabInstance:
     - target: {fileID: 6502334428825447185, guid: 1e91bd20502a9394a86cd12bd6dc7284,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.8
+      value: 211.7
       objectReference: {fileID: 0}
     - target: {fileID: 6502334428825447185, guid: 1e91bd20502a9394a86cd12bd6dc7284,
         type: 3}
@@ -2057,7 +2057,7 @@ Transform:
   - {fileID: 1813004166}
   - {fileID: 10994567}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &544787798
 GameObject:
@@ -8503,6 +8503,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikesContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 6456485472736015987, guid: fe469ef2e605a9045ac082d593b32d09,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe469ef2e605a9045ac082d593b32d09, type: 3}
 --- !u!1 &970020960
@@ -12205,6 +12210,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikesContainer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6456485472736015987, guid: fe469ef2e605a9045ac082d593b32d09,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe469ef2e605a9045ac082d593b32d09, type: 3}
 --- !u!1 &1794284173
@@ -14159,7 +14169,7 @@ Transform:
   - {fileID: 344316426}
   - {fileID: 509643093}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2116618387
 GameObject:
