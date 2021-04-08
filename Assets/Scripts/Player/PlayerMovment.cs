@@ -157,7 +157,7 @@ public class PlayerMovment : MonoBehaviour
     {
         if (!canChangeSpeed)
         {
-            rb.velocity = new Vector2(/*joystick1.GetComponent<Joystick>().Horizontal*/ dir.x * speed, rb.velocity.y);
+            rb.velocity = new Vector2(joystick1.GetComponent<Joystick>().Horizontal * speed, rb.velocity.y);
             if (facingRight == false && joystick1.GetComponent<Joystick>().Horizontal > 0) Flip();
             else if (facingRight == true && joystick1.GetComponent<Joystick>().Horizontal < 0) Flip();
         }
@@ -302,13 +302,15 @@ public class PlayerMovment : MonoBehaviour
     IEnumerator DieAnimation()
     {
         // POSICIO, FADE, TEXTO
+        rb.gravityScale = 0;
+       
         mc.movementSpeed = 0;
         StopPlayer();
         anim.SetTrigger("Die");
         //ANIMACIOPLAYER
         yield return new WaitForSeconds(0.2f);
         capcol.isTrigger = true;
-        rb.gravityScale = 0;
+      
         moveDie = true;
         Fade.SetActive(true);
         //FADE
