@@ -1,0 +1,1268 @@
+fileFormatVersion: 2
+guid: 31ec5d9fe8485a04e931661ff056f8e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1095699469251221406
+    second: smBat_cha_0
+  - first:
+      213: -1004644165321025629
+    second: smBat_cha_1
+  - first:
+      213: 5280995611966609812
+    second: smBat_cha_2
+  - first:
+      213: 1805527122996121737
+    second: smBat_cha_3
+  - first:
+      213: -7151741195865666136
+    second: smBat_cha_4
+  - first:
+      213: -6664598633185171283
+    second: smBat_cha_5
+  - first:
+      213: 6931878862170845330
+    second: smBat_cha_6
+  - first:
+      213: -8950927882111166332
+    second: smBat_cha_7
+  - first:
+      213: 6431617325278907314
+    second: smBat_cha_8
+  - first:
+      213: 333220822526196407
+    second: smBat_cha_9
+  - first:
+      213: -9109439843613139611
+    second: smBat_cha_10
+  - first:
+      213: 272140488788921889
+    second: smBat_cha_11
+  - first:
+      213: 1769094821582848542
+    second: smBat_cha_12
+  - first:
+      213: -5018894375491575103
+    second: smBat_cha_13
+  - first:
+      213: -5939703974964798433
+    second: smBat_cha_14
+  - first:
+      213: 8815727861013399092
+    second: smBat_cha_15
+  - first:
+      213: -4864559009282973319
+    second: smBat_cha_16
+  - first:
+      213: -7770836300836516140
+    second: smBat_cha_17
+  - first:
+      213: 7413637270583830577
+    second: smBat_cha_18
+  - first:
+      213: -1993532866043383664
+    second: smBat_cha_19
+  - first:
+      213: -5026998378881113674
+    second: smBat_cha_20
+  - first:
+      213: 1127215653849977365
+    second: smBat_cha_21
+  - first:
+      213: 7138007419844473240
+    second: smBat_cha_22
+  - first:
+      213: 2461175840295205822
+    second: smBat_cha_23
+  - first:
+      213: -3120702954122166522
+    second: smBat_cha_24
+  - first:
+      213: -8298097630809159039
+    second: smBat_cha_25
+  - first:
+      213: 6799392680878310230
+    second: smBat_cha_26
+  - first:
+      213: -4719585667667973970
+    second: smBat_cha_27
+  - first:
+      213: -7780672532527691944
+    second: smBat_cha_28
+  - first:
+      213: -1387570035968018216
+    second: smBat_cha_29
+  - first:
+      213: -3993623987906319915
+    second: smBat_cha_30
+  - first:
+      213: 3805776043952045490
+    second: smBat_cha_31
+  - first:
+      213: -3988245995074029976
+    second: smBat_cha_32
+  - first:
+      213: -1041846298236544952
+    second: smBat_cha_33
+  - first:
+      213: -3202035268220100503
+    second: smBat_cha_34
+  - first:
+      213: 7804434916093334884
+    second: smBat_cha_35
+  - first:
+      213: 2778303942668253573
+    second: smBat_cha_36
+  - first:
+      213: 3573499085230678936
+    second: smBat_cha_37
+  - first:
+      213: 410057632796284799
+    second: smBat_cha_38
+  - first:
+      213: -6589686197964566220
+    second: smBat_cha_39
+  - first:
+      213: 5596839069305080896
+    second: smBat_cha_40
+  - first:
+      213: -2087991109920835049
+    second: smBat_cha_41
+  - first:
+      213: -6987281380111876495
+    second: smBat_cha_42
+  - first:
+      213: 5825386731764050645
+    second: smBat_cha_43
+  - first:
+      213: -6549737101587171138
+    second: smBat_cha_44
+  - first:
+      213: 7769544331140274049
+    second: smBat_cha_45
+  - first:
+      213: 1187232379787023169
+    second: smBat_cha_46
+  - first:
+      213: 6983834241474522225
+    second: smBat_cha_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: smBat_cha_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 345
+        width: 47
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26862b2532b4bc0f0800000000000000
+      internalID: -1095699469251221406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 344
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a71f585479ce02f0800000000000000
+      internalID: -1004644165321025629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 343
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4999aa7778dd94940800000000000000
+      internalID: 5280995611966609812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 345
+        width: 47
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980548e2a558e0910800000000000000
+      internalID: 1805527122996121737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 344
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad46ee1649efbc90800000000000000
+      internalID: -7151741195865666136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_5
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 343
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8a17a8ad69283a0800000000000000
+      internalID: -6664598633185171283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 345
+        width: 47
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2907bb5391bf23060800000000000000
+      internalID: 6931878862170845330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 344
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488df98e38ae7c380800000000000000
+      internalID: -8950927882111166332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_8
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 343
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb4f7491e1b14950800000000000000
+      internalID: 6431617325278907314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 345
+        width: 47
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7baff669296df9400800000000000000
+      internalID: 333220822526196407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 344
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d16a2e9b4c49180800000000000000
+      internalID: -9109439843613139611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_11
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 343
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ec34b2556d6c300800000000000000
+      internalID: 272140488788921889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 297
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12cd6efd561d8810800000000000000
+      internalID: 1769094821582848542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 294
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c26e9f182e495ab0800000000000000
+      internalID: -5018894375491575103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 292
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c5f3564bee19da0800000000000000
+      internalID: -5939703974964798433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_15
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 297
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436c73828c1c75a70800000000000000
+      internalID: 8815727861013399092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 294
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97123c6ca5d9d7cb0800000000000000
+      internalID: -4864559009282973319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 292
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4decde85e81782490800000000000000
+      internalID: -7770836300836516140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 297
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138eeb681d782e660800000000000000
+      internalID: 7413637270583830577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_19
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 294
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090fa67ab6c8554e0800000000000000
+      internalID: -1993532866043383664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_20
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 292
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b1a35ccb938c3ab0800000000000000
+      internalID: -5026998378881113674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_21
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 297
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512dcf83aaca4af00800000000000000
+      internalID: 1127215653849977365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_22
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 294
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891bee7fdeb4f0360800000000000000
+      internalID: 7138007419844473240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_23
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 292
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbb19a036ad72220800000000000000
+      internalID: 2461175840295205822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 249
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f390a823901b4d0800000000000000
+      internalID: -3120702954122166522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_25
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 246
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a0c148b2c37dc80800000000000000
+      internalID: -8298097630809159039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 244
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65384285e9b4c5e50800000000000000
+      internalID: 6799392680878310230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_27
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 249
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea820a737d9a08eb0800000000000000
+      internalID: -4719585667667973970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 246
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8574c013e8f750490800000000000000
+      internalID: -7780672532527691944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_29
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 244
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d87629676c5ebce0800000000000000
+      internalID: -1387570035968018216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_30
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 249
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d96d52642cc398c0800000000000000
+      internalID: -3993623987906319915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_31
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 246
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bdf37ae525d0d430800000000000000
+      internalID: 3805776043952045490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_32
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 244
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866fcbae567e6a8c0800000000000000
+      internalID: -3988245995074029976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_33
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 249
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8481e0bcf4e9a81f0800000000000000
+      internalID: -1041846298236544952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_34
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 246
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960e77f73e51093d0800000000000000
+      internalID: -3202035268220100503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_35
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 244
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465166ed43cee4c60800000000000000
+      internalID: 7804434916093334884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589fecc37b48e8620800000000000000
+      internalID: 2778303942668253573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_37
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 197
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893ab5c1c7e979130800000000000000
+      internalID: 3573499085230678936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_38
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 195
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7792449e31d0b500800000000000000
+      internalID: 410057632796284799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_39
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 196
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431170d015bbc84a0800000000000000
+      internalID: -6589686197964566220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_40
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 197
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c05feea77fbad40800000000000000
+      internalID: 5596839069305080896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_41
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 195
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71abefee527f503e0800000000000000
+      internalID: -2087991109920835049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_42
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 196
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17efab0ea90380f90800000000000000
+      internalID: -6987281380111876495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_43
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 197
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dae11a4e5ee7d050800000000000000
+      internalID: 5825386731764050645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_44
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 195
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb833bfdec8aa15a0800000000000000
+      internalID: -6549737101587171138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_45
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 196
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18714448767f2db60800000000000000
+      internalID: 7769544331140274049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_46
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 197
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1431c072f85e97010800000000000000
+      internalID: 1187232379787023169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smBat_cha_47
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 195
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c6c4d9d309be060800000000000000
+      internalID: 6983834241474522225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
