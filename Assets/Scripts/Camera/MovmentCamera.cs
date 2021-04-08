@@ -11,7 +11,7 @@ public class MovmentCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movementSpeed = 1f;
+        //movementSpeed = 1f;
         counterSpeed = 0;
     }
 
