@@ -9,13 +9,18 @@ public class PlayerMovment : MonoBehaviour
 {
     public static PlayerMovment instance;
     private Collisions coll;
+    private CapsuleCollider2D capcol;
     public Rigidbody2D rb;
     [HideInInspector]
     public Animator anim;
     SpriteRenderer sr;
     public GameObject joystick1;
-    public Parry parry;
+     Parry parry;
     MovmentCamera mc;
+    public GameObject Fade;
+    public GameObject Camera;
+    public GameObject DieMenu;
+
 
     //stats
 
@@ -44,7 +49,7 @@ public class PlayerMovment : MonoBehaviour
     bool isInCoyoteTime = false;
     bool canJump = true;
     bool canChangeSpeed = false;
-
+    bool moveDie = false;
 
 
 
@@ -61,7 +66,9 @@ public class PlayerMovment : MonoBehaviour
         parry = GetComponent<Parry>();
         gravity = Physics2D.gravity;
         mc = FindObjectOfType<MovmentCamera>();
-
+        Fade.SetActive(false);
+        capcol = GetComponent<CapsuleCollider2D>();
+        DieMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -90,6 +97,12 @@ public class PlayerMovment : MonoBehaviour
         if (enableGravityController) JumpGravityController();
 
         else wallSliding = false;
+        //DIEANIM
+        if (moveDie)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(Camera.transform.position.x, 0 , 0), Time.deltaTime * (speed*2));
+
+        }
 
         //ANIMATIONS
 
@@ -291,13 +304,19 @@ public class PlayerMovment : MonoBehaviour
         // POSICIO, FADE, TEXTO
         mc.movementSpeed = 0;
         StopPlayer();
+        anim.SetTrigger("Die");
         //ANIMACIOPLAYER
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
+        capcol.isTrigger = true;
+        rb.gravityScale = 0;
+        moveDie = true;
+        Fade.SetActive(true);
         //FADE
         StopPlayer();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
+        DieMenu.SetActive(true);
         //MENU MUERTE
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 0;
 
     }
 

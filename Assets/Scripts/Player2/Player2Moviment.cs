@@ -14,7 +14,13 @@ public class Player2Moviment : MonoBehaviour
     public Animator anim;
     SpriteRenderer sr;
     public GameObject joystick1;
-  
+    MovmentCamera mc;
+    public GameObject Fade;
+    public GameObject Camera;
+    public GameObject DieMenu;
+    private CapsuleCollider2D capcol;
+
+
     //stats
 
     public float speed = 10;
@@ -42,11 +48,13 @@ public class Player2Moviment : MonoBehaviour
     public bool wallSliding = false;
     bool isInCoyoteTime = false;
     bool canJump = true;
+    bool moveDie = false;
 
 
 
 
-   
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +66,10 @@ public class Player2Moviment : MonoBehaviour
         extraJumpsAux = extraJumps;
         sr = GetComponent<SpriteRenderer>();
         initGravity = Physics2D.gravity;
+        mc = FindObjectOfType<MovmentCamera>();
+        Fade.SetActive(false);
+        capcol = GetComponent<CapsuleCollider2D>();
+        DieMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -85,6 +97,12 @@ public class Player2Moviment : MonoBehaviour
         if (enableGravityController) JumpGravityController();
 
         else wallSliding = false;
+
+        if (moveDie)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(Camera.transform.position.x, 0, 0), Time.deltaTime * (speed * 2));
+
+        }
 
         //ANIMATIONS
 
@@ -248,8 +266,7 @@ public class Player2Moviment : MonoBehaviour
     public void DieP2()
     {
         //MORT
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Debug.Log("ETUMORETCERDO");
+        StartCoroutine(DieAnimation());
     }
 
     void StopisInCoyoteTime()
@@ -277,5 +294,24 @@ public class Player2Moviment : MonoBehaviour
         canJump = true;
 
     }
-   
+    IEnumerator DieAnimation()
+    {
+        // POSICIO, FADE, TEXTO
+        mc.movementSpeed = 0;
+        StopPlayer();
+        anim.SetTrigger("Die");
+        //ANIMACIOPLAYER
+        yield return new WaitForSeconds(0.2f);
+        capcol.isTrigger = true;
+        rb.gravityScale = 0;
+        moveDie = true;
+        Fade.SetActive(true);
+        //FADE
+        StopPlayer();
+        yield return new WaitForSeconds(2);
+        DieMenu.SetActive(true);
+        //MENU MUERTE
+        Time.timeScale = 0;
+
+    }
 }
