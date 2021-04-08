@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovment : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class PlayerMovment : MonoBehaviour
     SpriteRenderer sr;
     public GameObject joystick1;
     public Parry parry;
+    MovmentCamera mc;
 
     //stats
 
@@ -57,6 +60,8 @@ public class PlayerMovment : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         parry = GetComponent<Parry>();
         gravity = Physics2D.gravity;
+        mc = FindObjectOfType<MovmentCamera>();
+
     }
 
     // Update is called once per frame
@@ -238,6 +243,11 @@ public class PlayerMovment : MonoBehaviour
         sr.flipX = !sr.flipX;
     }
 
+    public void DieP1()
+    {
+        //MORT
+        StartCoroutine(DieAnimation());
+    }
 
 
     void StopisInCoyoteTime()
@@ -263,6 +273,23 @@ public class PlayerMovment : MonoBehaviour
 
         speed = 10;
         canJump = true;
+
+    }
+
+    //COLLISIONS
+
+    IEnumerator DieAnimation()
+    {
+        // POSICIO, FADE, TEXTO
+        mc.movementSpeed = 0;
+        StopPlayer();
+        //ANIMACIOPLAYER
+        yield return new WaitForSeconds(1);
+        //FADE
+        StopPlayer();
+        yield return new WaitForSeconds(1);
+        //MENU MUERTE
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 

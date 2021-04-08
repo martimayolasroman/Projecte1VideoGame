@@ -1,33 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using UnityEngine.SceneManagement;
 
-public class PlayerDieFire : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
+//public class PlayerDieFire : MonoBehaviour
+//{
+//    // Start is called before the first frame update
+//    void Start()
+//    {
         
-    }
+//    }
 
-    // Update is called once per frame
-    void Update()
-    {
+//    // Update is called once per frame
+//    void Update()
+//    {
         
-    }
+//    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag =="Fire")
-        {
-            //Player Mort;
+//    private void OnTriggerEnter2D(Collider2D collision)
+//    {
+//        if (collision.gameObject.tag =="Fire")
+//        {
+//            //Player Mort;
 
-            gameObject.GetComponent<Player2Moviment>().PlayerDie();
-            //Reset Scene
+//            this.gameObject.GetComponent<Player2Moviment>().PlayerDie();
+//            //Reset Scene
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+//            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-        }
-    }
-}
+//        }
+//    }
+//}

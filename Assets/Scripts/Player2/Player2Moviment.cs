@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player2Moviment : MonoBehaviour
 {
@@ -67,7 +69,7 @@ public class Player2Moviment : MonoBehaviour
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
 
-        Debug.Log(Physics2D.gravity.y);
+        Debug.Log(rb.velocity.y);
         // CAMINAR
 
         if (canMove ) Move(dir);
@@ -192,24 +194,20 @@ public class Player2Moviment : MonoBehaviour
     private void JumpGravityController()
     {
 
-        if (rb.velocity.y < 0 && Input.GetKey(KeyCode.Space))
+
+        if (rb.velocity.y < 1)
         {
-            Physics2D.gravity = new Vector2(0, -9.8f) * 0.2f;
-        }
-        else if (rb.velocity.y < 0)
-        {
-            rb.velocity += Vector2.up * initGravity.y * (fallGravity) * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity) * Time.deltaTime;
+            Physics2D.gravity = new Vector2(0, -3);
 
         }
         else if (rb.velocity.y > 0)
         {
-            rb.velocity += Vector2.up * initGravity.y * (lowJumpGravity) * Time.deltaTime;
-        }
-        else
-        {
-            Physics2D.gravity = new Vector2(0, -9.8f); 
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpGravity) * Time.deltaTime;
+            Physics2D.gravity = new Vector2(0, -9.8f);
 
         }
+
     }
 
 
@@ -247,9 +245,11 @@ public class Player2Moviment : MonoBehaviour
         sr.flipX = !sr.flipX;
     }
 
-    public void PlayerDie()
+    public void DieP2()
     {
-        Physics2D.gravity = new Vector2 (0, -9.8f);
+        //MORT
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("ETUMORETCERDO");
     }
 
     void StopisInCoyoteTime()
@@ -277,5 +277,5 @@ public class Player2Moviment : MonoBehaviour
         canJump = true;
 
     }
-
+   
 }

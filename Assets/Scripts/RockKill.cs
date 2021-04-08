@@ -5,36 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class RockKill : MonoBehaviour
 {
-
-    public GameObject Knight;
-    public GameObject Dragon;
-    Animator KnightStunAnim;
-    Animator DragonStunAnim;
     // Start is called before the first frame update
+    SwitchCharacter sw;
+    bool dragon;
+
     void Start()
     {
-        KnightStunAnim = Knight.GetComponent<Animator>();
-        DragonStunAnim = Knight.GetComponent<Animator>();
+        sw = FindObjectOfType<SwitchCharacter>();
+        dragon = sw.dragonn;
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        dragon = sw.dragonn;
+
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == ("Player"))
+        if (collision.gameObject.tag == "Player")
         {
+            if (dragon)
+            {
+                collision.gameObject.GetComponent<PlayerMovment>().DieP1();
 
-            //ResetScene de moment
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            KnightStunAnim.SetBool("isStuned", true);
-            DragonStunAnim.SetBool("isStuned", true);
+            }
+            else
+            {
+                collision.gameObject.GetComponent<Player2Moviment>().DieP2();
 
+            }
 
         }
-      
     }
+
 }
