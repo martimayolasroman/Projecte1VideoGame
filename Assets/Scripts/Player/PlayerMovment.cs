@@ -9,7 +9,7 @@ public class PlayerMovment : MonoBehaviour
 {
     public static PlayerMovment instance;
     private Collisions coll;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     [HideInInspector]
     public Animator anim;
     SpriteRenderer sr;
@@ -36,14 +36,14 @@ public class PlayerMovment : MonoBehaviour
 
     public bool hasDashed = false;
     bool enableGravityController = true;
-    bool canMove = true;
+    public bool canMove = true;
     bool groundTouch = false;
     bool facingRight = true;
     bool startBuffering = false;
     public bool wallSliding = false;
     bool isInCoyoteTime = false;
     bool canJump = true;
-
+    bool canChangeSpeed = false;
 
 
 
@@ -75,6 +75,7 @@ public class PlayerMovment : MonoBehaviour
 
         Physics2D.gravity = new Vector2(0, -9.8f);
         // CAMINAR
+
 
         if (canMove && !parry.isParring) Move(dir);
 
@@ -141,9 +142,12 @@ public class PlayerMovment : MonoBehaviour
 
     private void Move(Vector2 dir)
     {
-        rb.velocity = new Vector2(joystick1.GetComponent<Joystick>().Horizontal * speed, rb.velocity.y);
-        if (facingRight == false && joystick1.GetComponent<Joystick>().Horizontal > 0) Flip();
-        else if (facingRight == true && joystick1.GetComponent<Joystick>().Horizontal < 0) Flip();
+        if (!canChangeSpeed)
+        {
+            rb.velocity = new Vector2(/*joystick1.GetComponent<Joystick>().Horizontal*/ dir.x * speed, rb.velocity.y);
+            if (facingRight == false && joystick1.GetComponent<Joystick>().Horizontal > 0) Flip();
+            else if (facingRight == true && joystick1.GetComponent<Joystick>().Horizontal < 0) Flip();
+        }
 
     }
 
@@ -263,6 +267,9 @@ public class PlayerMovment : MonoBehaviour
     {
 
         speed = 0;
+        canChangeSpeed = true;
+        rb.velocity = new Vector3(0, rb.velocity.y);
+
         Invoke("RestarSpeed", 1);
         canJump = false;
 
@@ -272,6 +279,7 @@ public class PlayerMovment : MonoBehaviour
     {
 
         speed = 10;
+        canChangeSpeed = false;
         canJump = true;
 
     }

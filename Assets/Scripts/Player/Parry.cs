@@ -22,7 +22,7 @@ public class Parry : MonoBehaviour
     JoyButton3 joyButton;
    public GameObject imgageJoy;
     bool isDoingColdown = false;
-
+    PlayerMovment pm;
 
     void Start()
     {
@@ -34,6 +34,7 @@ public class Parry : MonoBehaviour
         joyButton = FindObjectOfType<JoyButton3>();
         imgageJoy.GetComponent<Image>().fillAmount = 1;
         cooldown = startCooldown;
+        pm = FindObjectOfType<PlayerMovment>();
 
     }
 
@@ -48,8 +49,11 @@ public class Parry : MonoBehaviour
             {
                 //Animació de disparar
                 //player.anim.SetTrigger("isAttacking");
-                StartCoroutine(Parrying());
-                cooldown = 0;
+                if (pm.rb.velocity.y == 0)
+                {
+                    StartCoroutine(Parrying());
+                    cooldown = 0;
+                }
 
             }
 
@@ -76,15 +80,20 @@ public class Parry : MonoBehaviour
 
     IEnumerator Parrying()
     {
+
+
         anim.SetTrigger("Parry");
         parry.SetActive(true);
         isDoingColdown = true;
 
         imgageJoy.GetComponent<Image>().fillAmount = 0;
         transform.gameObject.tag = "Parry";
+        pm.StopPlayer();
+        pm.canMove = false;
         isParring = true;
         yield return new WaitForSeconds(1f);
         transform.gameObject.tag = "Player";
+        pm.canMove = true;
 
         parry.SetActive(false);
         isParring = false;
