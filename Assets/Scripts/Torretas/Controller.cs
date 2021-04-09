@@ -26,7 +26,7 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shootingDir =  transform.position - new Vector3(0, directiony, directionx);
+        shootingDir =  transform.position - new Vector3(directionx, directiony, 0);
         //Calculem els graus que rotarem per apuntar a la direcció
         rotZ = Mathf.Atan2(shootingDir.y, shootingDir.x) * Mathf.Rad2Deg + 90f;
 

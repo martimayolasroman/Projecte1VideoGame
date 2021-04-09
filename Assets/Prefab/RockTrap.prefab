@@ -411,9 +411,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7564067601005921000}
   - component: {fileID: 7998810488526297376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Coliision (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,9 +468,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4999179184830353161}
   - component: {fileID: 575592662493092617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Coliision (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,9 +525,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6311597864307526045}
   - component: {fileID: 8204899092539671546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Coliision
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
