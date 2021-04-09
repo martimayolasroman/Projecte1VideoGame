@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -13715,6 +13715,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 237695692642970025, guid: d7d6a415e25a0ec43969c69a27acbc72,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -83.818
+      objectReference: {fileID: 0}
+    - target: {fileID: 237695692642970025, guid: d7d6a415e25a0ec43969c69a27acbc72,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 176
+      objectReference: {fileID: 0}
     - target: {fileID: 237695693524238804, guid: d7d6a415e25a0ec43969c69a27acbc72,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13833,7 +13843,7 @@ PrefabInstance:
     - target: {fileID: 237695693524238808, guid: d7d6a415e25a0ec43969c69a27acbc72,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 237695694198878042, guid: d7d6a415e25a0ec43969c69a27acbc72,
         type: 3}
@@ -13844,6 +13854,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MENU
+      objectReference: {fileID: 0}
+    - target: {fileID: 237695694198878043, guid: d7d6a415e25a0ec43969c69a27acbc72,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00000095367
+      objectReference: {fileID: 0}
+    - target: {fileID: 237695694198878043, guid: d7d6a415e25a0ec43969c69a27acbc72,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 232.07031
+      objectReference: {fileID: 0}
+    - target: {fileID: 237695694198878043, guid: d7d6a415e25a0ec43969c69a27acbc72,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 186
+      objectReference: {fileID: 0}
+    - target: {fileID: 237695694198878043, guid: d7d6a415e25a0ec43969c69a27acbc72,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 900.2234
       objectReference: {fileID: 0}
     - target: {fileID: 237695694289990477, guid: d7d6a415e25a0ec43969c69a27acbc72,
         type: 3}
@@ -18723,7 +18753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1929128000
 RectTransform:
   m_ObjectHideFlags: 0

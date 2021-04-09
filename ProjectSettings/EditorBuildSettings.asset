@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelector.unity
     guid: 4c8fac28636de704591199342e413f51
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Marti.unity
     guid: 5a6a2e62d8ad7cd47861091a0048fcdb
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SeYgaTest.unity
     guid: 200253f267f11cb438aac12ce5b0b189
   - enabled: 1
