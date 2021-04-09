@@ -31,7 +31,7 @@ public class EnergyBar : MonoBehaviour
     void Update()
     {
         dragon = sw.dragonn;
-        energyText.text = "Energy: " + energy + "%";
+
         if (energy > maxEnergy) energy = maxEnergy;
         
         EnergyBarFiller();

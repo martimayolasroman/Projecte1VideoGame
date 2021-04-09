@@ -40,6 +40,17 @@ public class BatKill : MonoBehaviour
             }
 
         }
+        if (collision.gameObject.tag == "Fire")
+        {
+            Destroy(gameObject);
+
+        }
+        if (collision.gameObject.tag == "Parry")
+        {
+            Destroy(gameObject);
+
+        }
+
     }
 
 }
