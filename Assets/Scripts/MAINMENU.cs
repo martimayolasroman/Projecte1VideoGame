@@ -48,4 +48,14 @@ public class MAINMENU : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void BackMenu()
+    {
+        SceneManager.LoadScene("MENU");
+    }
+
+    public void MenuOptions()
+    {
+        SceneManager.LoadScene("OPTIONS");
+    }
 }
