@@ -2597,7 +2597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbe98e1acf644c4a8c4462578106d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1507245669}
+  offset: {x: 0, y: 0, z: -10}
+  smoothFactor: 5.43
 --- !u!114 &570508065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16360,12 +16361,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &1507245669 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2037084535299998251, guid: 3642b0db1f15f424db2bc5292bbfba12,
-    type: 3}
-  m_PrefabInstance: {fileID: 425766124}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1521146671
 GameObject:
   m_ObjectHideFlags: 0

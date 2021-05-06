@@ -7,8 +7,9 @@ public class CamFollowPlayer : MonoBehaviour
 
 
     private GameObject player;
-
-
+    public Vector3 offset;
+    [Range(1,10)]
+    public float smoothFactor;
 
 
     // Start is called before the first frame update
@@ -20,10 +21,19 @@ public class CamFollowPlayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        transform.position = new Vector3(player.transform.position.x,0,0);
 
+        Follow();
 
 
     }
+
+
+    void Follow()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 tagetPosition = new Vector3(player.transform.position.x, 0, 0) + offset;
+        Vector3 smoothposition = Vector3.Lerp(transform.position, tagetPosition,smoothFactor*Time.fixedDeltaTime);
+        transform.position = smoothposition;
+    }
 }
+    
