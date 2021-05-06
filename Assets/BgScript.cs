@@ -18,8 +18,4 @@ public class BgScript : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void Start()
-    {
-        Audio = GetComponent<AudioSource>();
-    }
 }
