@@ -8,6 +8,8 @@ public class BatKill : MonoBehaviour
     // Start is called before the first frame update
     SwitchCharacter sw;
     bool dragon;
+    public int orbeEnergyValue = 4;
+    public EnergyBar EnergyBarScript;
 
     void Start()
     {
@@ -47,6 +49,7 @@ public class BatKill : MonoBehaviour
         }
         if (collision.gameObject.tag == "Parry")
         {
+            EnergyBarScript.PlusEnergy(orbeEnergyValue);
             Destroy(gameObject);
 
         }

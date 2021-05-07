@@ -24,6 +24,8 @@ public class Parry : MonoBehaviour
     bool isDoingColdown = false;
     PlayerMovment pm;
 
+ 
+
     void Start()
     {
         isParring = false;
@@ -85,7 +87,7 @@ public class Parry : MonoBehaviour
         anim.SetTrigger("Parry");
         parry.SetActive(true);
         isDoingColdown = true;
-
+        
         imgageJoy.GetComponent<Image>().fillAmount = 0;
         transform.gameObject.tag = "Parry";
         pm.StopPlayer();
