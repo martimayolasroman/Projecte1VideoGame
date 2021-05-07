@@ -1240,7 +1240,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Fade
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1929127999}
     - target: {fileID: 2037084535299998260, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: Camera
@@ -1285,7 +1285,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Fade
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1929127999}
     - target: {fileID: 2037084535959570082, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: Camera
@@ -1946,6 +1946,7 @@ RectTransform:
   - {fileID: 1708301069}
   - {fileID: 1521146672}
   - {fileID: 788380754}
+  - {fileID: 1929128000}
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17928,6 +17929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BAT
       objectReference: {fileID: 0}
+    - target: {fileID: 764930766421998904, guid: dabb51822aac2f040b9179793870e1ed,
+        type: 3}
+      propertyPath: EnergyBarScript
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 764930766421998906, guid: dabb51822aac2f040b9179793870e1ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18907,7 +18913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1929128000
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19673,7 +19679,7 @@ MonoBehaviour:
   - {fileID: 189287666}
   - {fileID: 1804229113}
   maxTime: 10
-  energy: 0
+  energy: 74
   maxEnergy: 100
 --- !u!114 &2116618389
 MonoBehaviour:

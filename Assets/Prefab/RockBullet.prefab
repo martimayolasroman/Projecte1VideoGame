@@ -99,6 +99,9 @@ MonoBehaviour:
   speed: 10
   lifeTime: 3
   destroyEffect: {fileID: 0}
+  orbeEnergyValue: 4
+  EnergyBarScript: {fileID: 699816694540467192, guid: b759d1e9620849f459ac16e934fed79e,
+    type: 3}
 --- !u!50 &5808944480559264930
 Rigidbody2D:
   serializedVersion: 4

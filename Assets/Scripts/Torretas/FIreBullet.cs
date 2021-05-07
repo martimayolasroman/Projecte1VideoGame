@@ -12,6 +12,8 @@ public class FIreBullet : MonoBehaviour
     private GameObject Player;
 
     public ParticleSystem destroyEffect;
+    public int orbeEnergyValue = 2;
+    public EnergyBar EnergyBarScript;
 
 
     private void Start()
@@ -72,6 +74,7 @@ public class FIreBullet : MonoBehaviour
         }
         if(collision.gameObject.tag == "Parry")
         {
+            EnergyBarScript.PlusEnergy(orbeEnergyValue);
             DestroyBullet();
 
         }

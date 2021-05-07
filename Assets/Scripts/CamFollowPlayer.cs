@@ -10,8 +10,8 @@ public class CamFollowPlayer : MonoBehaviour
     public Vector3 offset;
     [Range(1,10)]
     public float smoothFactor;
-
-
+    Vector3 tagetPosition;
+    Vector3 smoothposition;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +21,9 @@ public class CamFollowPlayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        
         Follow();
-
+        
 
     }
 
@@ -31,8 +31,9 @@ public class CamFollowPlayer : MonoBehaviour
     void Follow()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        Vector3 tagetPosition = new Vector3(player.transform.position.x, 0, 0) + offset;
-        Vector3 smoothposition = Vector3.Lerp(transform.position, tagetPosition,smoothFactor*Time.fixedDeltaTime);
+        //transform.position = new Vector3(player.transform.position.x, 0, 0);
+         tagetPosition = new Vector3(player.transform.position.x, 0, 0) + offset;
+         smoothposition = Vector3.Lerp(transform.position, tagetPosition,smoothFactor*Time.fixedDeltaTime);
         transform.position = smoothposition;
     }
 }

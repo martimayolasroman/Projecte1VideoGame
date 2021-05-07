@@ -8,7 +8,7 @@ public class BatKill : MonoBehaviour
     // Start is called before the first frame update
     SwitchCharacter sw;
     bool dragon;
-    public int orbeEnergyValue = 4;
+    public int orbeEnergyValue = 2;
     public EnergyBar EnergyBarScript;
 
     void Start()
