@@ -39,6 +39,19 @@ public class Spikeskill : MonoBehaviour
             }
 
         }
+        if(collision.gameObject.tag == "Parry")
+        {
+            if (dragon)
+            {
+                collision.gameObject.GetComponent<PlayerMovment>().DieP1();
+
+            }
+            else
+            {
+                collision.gameObject.GetComponent<Player2Moviment>().DieP2();
+
+            }
+        }
     }
    
 }
