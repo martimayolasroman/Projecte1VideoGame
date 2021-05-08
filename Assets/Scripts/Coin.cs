@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour
     private void Start()
     {
         CoinCounter = GameObject.FindGameObjectWithTag("CoinCounter").GetComponent<CointCounter>();
-        Debug.Log("Monedetes");
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -25,17 +25,14 @@ public class Coin : MonoBehaviour
             if (gameObject.CompareTag("coin1"))
             {
                 CointCounter.instance.ChangeScore("coins1");
-                Debug.Log("Monedetes1");
             }
             if (gameObject.CompareTag("coin2"))
             {
                 CointCounter.instance.ChangeScore("coins2");
-                Debug.Log("Monedetes2");
             }
             if (gameObject.CompareTag("coin3"))
             {
                 CointCounter.instance.ChangeScore("coins3");
-                Debug.Log("Monedetes3");
             }
 
             //   Destroy(effectObj, 5f);

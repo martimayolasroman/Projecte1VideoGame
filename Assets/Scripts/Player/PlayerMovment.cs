@@ -16,11 +16,10 @@ public class PlayerMovment : MonoBehaviour
     SpriteRenderer sr;
     public GameObject joystick1;
      Parry parry;
-    MovmentCamera mc;
     public GameObject Fade;
     public GameObject Camera;
     public GameObject DieMenu;
-
+    //public GameObject cam;
 
     //stats
 
@@ -47,8 +46,8 @@ public class PlayerMovment : MonoBehaviour
     bool startBuffering = false;
     public bool wallSliding = false;
     bool isInCoyoteTime = false;
-    bool canJump = true;
-    bool canChangeSpeed = false;
+    public bool canJump = true;
+    public bool canChangeSpeed = false;
     bool moveDie = false;
 
 
@@ -65,10 +64,10 @@ public class PlayerMovment : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         parry = GetComponent<Parry>();
         gravity = Physics2D.gravity;
-        mc = FindObjectOfType<MovmentCamera>();
         Fade.SetActive(false);
         capcol = GetComponent<CapsuleCollider2D>();
         DieMenu.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -303,8 +302,8 @@ public class PlayerMovment : MonoBehaviour
     {
         // POSICIO, FADE, TEXTO
         rb.gravityScale = 0;
-       
-        mc.movementSpeed = 0;
+        //instance.GetComponent<CamFollowPlayer>().StopCam();
+        CamFollowPlayer.instance.StopCam();
         StopPlayer();
         anim.SetTrigger("Die");
         //ANIMACIOPLAYER

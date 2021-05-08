@@ -81,7 +81,7 @@ public class Player2Moviment : MonoBehaviour
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
 
-        Debug.Log(rb.velocity.y);
+
         // CAMINAR
 
         if (canMove ) Move(dir);

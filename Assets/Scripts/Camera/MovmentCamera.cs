@@ -5,9 +5,9 @@ using UnityEngine;
 public class MovmentCamera : MonoBehaviour
 {
 
-    public float movementSpeed = 1f;
+    public float movementSpeed = 2f;
     int counterSpeed = 0;
-
+    public bool canMove = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,40 +25,42 @@ public class MovmentCamera : MonoBehaviour
         float verticalInput = 1;
 
         //update the position
-        var tmp = transform.position;
-        tmp.x += (horizontalInput * movementSpeed * Time.deltaTime);
-        transform.position = tmp;
+        if (canMove)
+        {
+            var tmp = transform.position;
+            tmp.x += (horizontalInput * movementSpeed * Time.deltaTime);
+            transform.position = tmp;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.tag == "ChangeSpeed" && counterSpeed == 0)
+        if (other.gameObject.CompareTag("ChangeSpeed"))// && counterSpeed == 0)
         {
-            movementSpeed = 1.25f;
+            movementSpeed = 3.5f;
             StartCoroutine(CanChangeVel());
 
         }
-        if (other.gameObject.tag == "ChangeSpeed" && counterSpeed == 1)
+        if (other.CompareTag("ChangeSpeed") && counterSpeed == 1)
         {
-            movementSpeed = 1.5f;
+            movementSpeed = 4f;
             StartCoroutine(CanChangeVel());
         }
 
 
-        if (other.gameObject.tag == "ChangeSpeed" && counterSpeed == 2)
+        if (other.CompareTag("ChangeSpeed") && counterSpeed == 2)
         {
-            movementSpeed = 1.75f;
+            movementSpeed = 4.5f;
 
         }
-
     }
 
-
+   
     IEnumerator CanChangeVel()
     {
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         counterSpeed++;
 
 
