@@ -173,8 +173,8 @@ public class Player2Moviment : MonoBehaviour
 
     public void DoJump()
     {
-       
-            if (coll.onGround && rb.drag == 0)//SALT EN TERRA
+        canJump = true;
+        if (coll.onGround && rb.drag == 0)//SALT EN TERRA
             //rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
             //el dash acaba quan esta a l'aire, pero ha fet el dash, ha tocat el terra,
             // i no ha recuperat l'us del dash (pq no l ha acabat mentre estava al terra) i pot confodre al jugador,
@@ -206,6 +206,11 @@ public class Player2Moviment : MonoBehaviour
                 startBuffering = true;
             }
         }
+
+    public void NotJump()
+    {
+        canJump = false;
+    }
     
 
 

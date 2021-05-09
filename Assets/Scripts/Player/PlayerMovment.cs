@@ -173,8 +173,15 @@ public class PlayerMovment : MonoBehaviour
         }
     }
 
+
+    public void NotJump()
+    {
+        canJump = false;
+    }
+
     public void DoJump()
     {
+        canJump = true;
 
         if (coll.onGround && rb.drag == 0)//SALT EN TERRA
                                           //rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
