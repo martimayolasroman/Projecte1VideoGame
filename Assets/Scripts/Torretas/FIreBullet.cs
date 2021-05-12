@@ -84,6 +84,11 @@ public class FIreBullet : MonoBehaviour
 
             DestroyBullet();
         }
+        if (collision.gameObject.tag == "Fire")
+        {
+
+            DestroyBullet();
+        }
     }
 
 
