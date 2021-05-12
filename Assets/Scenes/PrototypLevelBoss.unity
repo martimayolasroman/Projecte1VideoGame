@@ -13259,7 +13259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878619664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.44, y: 1.11, z: 0}
+  m_LocalPosition: {x: -11.96, y: 1.11, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 236603304}
@@ -16016,7 +16016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472146897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.33, y: 1.0500001, z: 0}
+  m_LocalPosition: {x: -11.85, y: 1.0500001, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 236603304}
@@ -19183,7 +19183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879817862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.53, y: 0.87999994, z: 0}
+  m_LocalPosition: {x: -12.05, y: 0.87999994, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 236603304}
@@ -20207,6 +20207,7 @@ MonoBehaviour:
   - {fileID: 189287666}
   - {fileID: 1804229113}
   maxTime: 10
+  timeLeft: 0
   energy: 74
   maxEnergy: 100
 --- !u!114 &2116618389

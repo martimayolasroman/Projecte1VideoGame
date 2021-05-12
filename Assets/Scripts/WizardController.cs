@@ -49,8 +49,8 @@ public class WizardController : MonoBehaviour
         //Movment 
         if (wiz1Right)
         {
-          
-            wiza1.GetComponent<Rigidbody2D>().MovePosition(wiza1.transform.position* step);
+
+            wiza1.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(7, 0, 0);
 
         }
         if (wiz1Left)
@@ -60,18 +60,22 @@ public class WizardController : MonoBehaviour
         }
         if (wiz2Right)
         {
+            wiza2.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(7, 0, 0);
 
         }
         if (wiz2Left)
         {
+            wiza2.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
 
         }
         if (wiz3Right)
         {
+            wiza3.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(7, 0, 0);
 
         }
         if (wiz3Left)
         {
+            wiza3.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
 
         }
 
@@ -99,32 +103,38 @@ public class WizardController : MonoBehaviour
     IEnumerator Wizard2Move()
     {
 
-        //Mou dreta
+        //Mou dreta       
         yield return new WaitForSeconds(2f);
- 
+        wiz2Right = true;
+
         //Ataca
+
         yield return new WaitForSeconds(5f);
         //Mou esquerra
+        wiz2Right = false;
+        wiz2Left = true;
         yield return new WaitForSeconds(2f);
-        wiza2.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
-
+        wiz2Left = false;
+        //wiza1.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
         //Activa2
         wiza3active = true;
     }
     IEnumerator Wizard3Move()
     {
 
-        //Mou dreta
-
+        //Mou dreta       
         yield return new WaitForSeconds(2f);
-        wiza3.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(7, 0, 0);
+        wiz3Right = true;
+
         //Ataca
 
         yield return new WaitForSeconds(5f);
         //Mou esquerra
-
+        wiz3Right = false;
+        wiz3Left = true;
         yield return new WaitForSeconds(2f);
-        wiza3.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
+        wiz3Left = false;
+        //wiza1.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
         //Activa2
         wiza1active = true;
     }
