@@ -16,30 +16,29 @@ public class PauseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-
-            if (isactive)
-            {
-                pauseMenu.SetActive(false);
-                isactive = false;
-                Time.timeScale = 1;
-
-            }
-            else
-            {
-                pauseMenu.SetActive(true);
-                isactive = true;
-                Time.timeScale = 0;
-
-
-            }
-
-        }
+     
 
         
      
     }
 
+    public void ActivatePauseMenu()
+    {
+        if (isactive)
+        {
+            pauseMenu.SetActive(false);
+            isactive = false;
+            Time.timeScale = 1;
+
+        }
+        else
+        {
+            pauseMenu.SetActive(true);
+            isactive = true;
+            Time.timeScale = 0;
+
+
+        }
+    }
     
 }
