@@ -7,13 +7,13 @@ public class EnergyBar : MonoBehaviour
 {
     public Text energyText;
     public Image[] EnergyPoints;
-    public float maxTime = 10f;
-    float timeLeft;
+    public float maxTime = 10;
+    public float timeLeft;
     SwitchCharacter sw;
     bool dragon;
 
 
-    public float energy, maxEnergy = 100;
+    public float energy, maxEnergy = 10;
 
    
 
@@ -21,6 +21,7 @@ public class EnergyBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxTime = 100;
         energy = 0;
         timeLeft = maxTime;
         sw = FindObjectOfType<SwitchCharacter>();
@@ -28,19 +29,23 @@ public class EnergyBar : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   
+    private void Update()
     {
-        dragon = sw.dragonn;
-
+        // dragon = sw.dragonn;
+        //Debug.Log(Time.deltaTime);
+       // Debug.Log("dsadf");
         if (energy > maxEnergy) energy = maxEnergy;
-        
+
         EnergyBarFiller();
 
 
-        if (!dragon) {
-            if (timeLeft > 0)
+        if (!sw.dragonn)
+        {
+            if (energy > 0)
             {
-                timeLeft -= Time.deltaTime;
+                energy -= 16*Time.deltaTime;
+                
 
                 DecrisBar();
 
@@ -57,24 +62,23 @@ public class EnergyBar : MonoBehaviour
         }
     }
 
-    public void UpdateTime()
-    {
-        
-    }
+  
 
     public void DecrisBar()
     {
-        
+       // timeLeft = maxTime;
         //Quant passi temps restar barra.
-        energy=energy-0.1f;
+       // energy =  energy - 0.03f;
+
         if (energy <= 0)
         {
             energy = 0;
             sw.dragonn = true;
           
-            sw.Personaje2.GetComponent<Animator>().SetTrigger("Change");
+           sw.Personaje2.GetComponent<Animator>().SetTrigger("Change");
            sw.StartCoroutine(sw.changeChar(0.5f, true));
-           
+           // timeLeft = maxTime;
+
         }
     }
 
