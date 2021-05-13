@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 public class FinalLine : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject victoryMenu;
+
     void Start()
     {
-        
+        victoryMenu.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -21,7 +24,9 @@ public class FinalLine : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            SceneManager.LoadScene("MENU");
+            victoryMenu.SetActive(true);
+            Time.timeScale =0;
+
         }
     }
 }
