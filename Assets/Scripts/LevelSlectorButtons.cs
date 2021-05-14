@@ -23,14 +23,15 @@ public class LevelSlectorButtons : MonoBehaviour
     
     public void Level2()
     {
-        //SceneManager.LoadScene("SeYgaTest");
+        SceneManager.LoadScene("LEVEL2F");
+        Debug.Log("jj");
     }
-    
+
     public void Level3()
     {
 
-    } 
-    
+    }
+
     public void Level4()
     {
 
