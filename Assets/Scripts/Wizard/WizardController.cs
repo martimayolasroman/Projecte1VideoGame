@@ -17,6 +17,8 @@ public class WizardController : MonoBehaviour
     private bool wiz2Right, wiz2Left;
     private bool wiz3Right, wiz3Left;
 
+    private bool wiz1atac, wiz2atac, wiz3atac = false;
+
 
     void Start()
     {
@@ -28,8 +30,7 @@ public class WizardController : MonoBehaviour
     {
        
 
-        float step = 0.1f * Time.deltaTime; // calculate distance to move
-
+        //activa personatges
         if (wiza1active)
         {
             StartCoroutine(Wizard1Move());
@@ -55,7 +56,7 @@ public class WizardController : MonoBehaviour
         }
         if (wiz1Left)
         {
-            wiza1.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
+            wiza1.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(15, 0, 0);
 
         }
         if (wiz2Right)
@@ -65,7 +66,7 @@ public class WizardController : MonoBehaviour
         }
         if (wiz2Left)
         {
-            wiza2.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
+            wiza2.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(15, 0, 0);
 
         }
         if (wiz3Right)
@@ -75,26 +76,44 @@ public class WizardController : MonoBehaviour
         }
         if (wiz3Left)
         {
-            wiza3.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
+            wiza3.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(15, 0, 0);
+
+        }
+
+        //Atac
+
+        if (wiz1atac)
+        {
+
+        }
+
+        if (wiz2atac)
+        {
+
+
+        }
+        if (wiz3atac)
+        {
 
         }
 
 
     }
 
+
+
+
     IEnumerator Wizard1Move(){
 
         //Mou dreta       
-        yield return new WaitForSeconds(2f);
         wiz1Right = true;
-
         //Ataca
-
+        wiz3atac = true;
         yield return new WaitForSeconds(5f);
         //Mou esquerra
         wiz1Right = false;
         wiz1Left = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         wiz1Left = false;
         //wiza1.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
         //Activa2
@@ -104,8 +123,9 @@ public class WizardController : MonoBehaviour
     {
 
         //Mou dreta       
-        yield return new WaitForSeconds(2f);
+      
         wiz2Right = true;
+        wiz3atac = true;
 
         //Ataca
 
@@ -113,7 +133,7 @@ public class WizardController : MonoBehaviour
         //Mou esquerra
         wiz2Right = false;
         wiz2Left = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         wiz2Left = false;
         //wiza1.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
         //Activa2
@@ -123,8 +143,9 @@ public class WizardController : MonoBehaviour
     {
 
         //Mou dreta       
-        yield return new WaitForSeconds(2f);
+       
         wiz3Right = true;
+        wiz3atac = true;
 
         //Ataca
 
@@ -132,7 +153,7 @@ public class WizardController : MonoBehaviour
         //Mou esquerra
         wiz3Right = false;
         wiz3Left = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         wiz3Left = false;
         //wiza1.transform.position = CamFollowPlayer.instance.transform.position - new Vector3(10, 0, 0);
         //Activa2
