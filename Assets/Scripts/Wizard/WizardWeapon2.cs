@@ -28,7 +28,7 @@ public class WizardWeapon2 : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        shootingDir = transform.position - new Vector3(player.transform.position.x, player.transform.position.y  0);
+        shootingDir = transform.position - new Vector3(player.transform.position.x, player.transform.position.y, 0);
         shootingDir = transform.position - new Vector3(player.transform.position.x, player.transform.position.y, 0);
         shootingDir = transform.position - new Vector3(player.transform.position.x, -player.transform.position.y - 1000, 0);
 
