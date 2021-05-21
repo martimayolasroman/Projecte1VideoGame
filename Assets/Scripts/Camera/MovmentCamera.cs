@@ -46,6 +46,7 @@ public class MovmentCamera : MonoBehaviour
 
         if (other.gameObject.CompareTag("ChangeSpeed") && counterSpeed == 0)
         {
+            movementSpeed = 3.5f;
             movementSpeed = 3f;
             StartCoroutine(CanChangeVel());
             FirstCounter.gameObject.SetActive(true);
@@ -54,6 +55,7 @@ public class MovmentCamera : MonoBehaviour
         }
         if (other.CompareTag("ChangeSpeed") && counterSpeed == 1)
         {
+            movementSpeed = 4f;
             movementSpeed = 3.5f;
             StartCoroutine(CanChangeVel());
            SecondCounter.gameObject.SetActive(true);
@@ -63,6 +65,7 @@ public class MovmentCamera : MonoBehaviour
 
         if (other.CompareTag("ChangeSpeed") && counterSpeed == 2)
         {
+            movementSpeed = 4.5f;
             movementSpeed = 4f;
            ThirdCounter.gameObject.SetActive(true);
             StartCoroutine(TurnOffVelocities());
