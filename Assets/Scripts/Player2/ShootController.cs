@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class ShootController : MonoBehaviour
 {
     public float speed;
+    public ParticleSystem ExplosionParticles;
    
 
     [Header("Seconds of bullet life time")]
@@ -19,6 +20,8 @@ public class ShootController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+        
+        
 
     }
 
@@ -56,9 +59,12 @@ public class ShootController : MonoBehaviour
     IEnumerator TimingExplosion()
     {
         anim.SetTrigger("Explosion");
+        ExplosionParticles.Play(true);
         rb2d.velocity = Vector3.zero;
         yield return new WaitForSeconds(0.35f);
         Destroy(gameObject);
+        //ExplosionParticles.SetActive(false);
+       
 
     }
 }
