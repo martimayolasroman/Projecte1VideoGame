@@ -19,6 +19,7 @@ public class Player2Moviment : MonoBehaviour
     public GameObject Camera;
     public GameObject DieMenu;
     private CapsuleCollider2D capcol;
+    public GameObject RunSmoke;
 
 
     //stats
@@ -117,6 +118,17 @@ public class Player2Moviment : MonoBehaviour
         {
             anim.SetBool("IsJumping", true);
 
+        }
+
+        if (coll.onGround && (rb.velocity.x > 0 || rb.velocity.x < 0))
+        {
+            RunSmoke.SetActive(true);
+
+        }
+        else
+        {
+
+            RunSmoke.SetActive(false);
         }
 
 

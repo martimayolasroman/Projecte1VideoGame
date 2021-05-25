@@ -11,6 +11,7 @@ public class BreakableWallScript : MonoBehaviour
     
     private Animator destoyedEffect;
     SpriteRenderer mySprite;
+    public GameObject ExplosionPS;
     
     // Start is called before the first frame update
     void Start()
@@ -30,8 +31,11 @@ public class BreakableWallScript : MonoBehaviour
     {
         if(collision.tag == "FireBall")
         {
+            GameObject Exp = Instantiate(ExplosionPS, transform.position, Quaternion.identity);
+            Exp.GetComponent<ParticleSystem>().Play();
            // Instantiate(destoyedEffect, transform.position, Quaternion.identity);
             gameObject.GetComponent<Animator>().SetTrigger("Destroy");
+
             Invoke("DestroyWall", 0.30f);
            
         }

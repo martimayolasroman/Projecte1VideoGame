@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  ExplosionParticles: {fileID: 627584627483197924, guid: b76e2f96b0bda75499d24d048c551cf6,
+    type: 3}
   lifeTime: 3
   anim: {fileID: 0}
   rb2d: {fileID: 0}

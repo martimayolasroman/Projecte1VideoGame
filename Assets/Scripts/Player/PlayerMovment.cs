@@ -19,6 +19,7 @@ public class PlayerMovment : MonoBehaviour
     public GameObject Fade;
     public GameObject Camera;
     public GameObject DieMenu;
+    public GameObject RunSmoke;
     //public GameObject cam;
 
     //stats
@@ -142,7 +143,15 @@ public class PlayerMovment : MonoBehaviour
         if (rb.velocity.y < -15 && hasDashed == false) rb.velocity = new Vector2(rb.velocity.x, -15);
 
 
+        if(coll.onGround && (rb.velocity.x > 0 || rb.velocity.x < 0))
+        {
+            RunSmoke.SetActive(true);
+            
+        }
+        else{
 
+            RunSmoke.SetActive(false);
+        }
 
 
 

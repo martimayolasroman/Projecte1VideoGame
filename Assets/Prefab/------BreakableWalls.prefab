@@ -124,6 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakStages: []
   objectHealth: 0
+  ExplosionPS: {fileID: 5804754536653081959, guid: a09f3ad25c5da454f9b05902c38aa8a6,
+    type: 3}
 --- !u!95 &8329217838768337254
 Animator:
   serializedVersion: 3
@@ -267,6 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakStages: []
   objectHealth: 0
+  ExplosionPS: {fileID: 5804754536653081959, guid: a09f3ad25c5da454f9b05902c38aa8a6,
+    type: 3}
 --- !u!95 &8329217838935241804
 Animator:
   serializedVersion: 3
@@ -410,6 +414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakStages: []
   objectHealth: 0
+  ExplosionPS: {fileID: 5804754536653081959, guid: a09f3ad25c5da454f9b05902c38aa8a6,
+    type: 3}
 --- !u!95 &8329217839926470527
 Animator:
   serializedVersion: 3
@@ -588,6 +594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakStages: []
   objectHealth: 0
+  ExplosionPS: {fileID: 5804754536653081959, guid: a09f3ad25c5da454f9b05902c38aa8a6,
+    type: 3}
 --- !u!95 &8329217840441388131
 Animator:
   serializedVersion: 3
@@ -731,6 +739,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakStages: []
   objectHealth: 0
+  ExplosionPS: {fileID: 5804754536653081959, guid: a09f3ad25c5da454f9b05902c38aa8a6,
+    type: 3}
 --- !u!95 &8329217840629777920
 Animator:
   serializedVersion: 3
