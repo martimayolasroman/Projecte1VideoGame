@@ -14,26 +14,34 @@ public class WizardWeapon2 : MonoBehaviour
     public float startCooldown;
     public GameObject bullet;
     Vector3 shootingDir, shootingDir2, shootingDir3;
-    float rotZ;
+    float rotZ, rotZ2, rotZ3;
     public GameObject posToInitBullet;
     public GameObject player;
+    WizardController wz;
+    public GameObject wizard2;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        wz = FindObjectOfType<WizardController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //actualitza dades si s'ha canviat el player
         player = GameObject.FindGameObjectWithTag("Player");
+        wz = FindObjectOfType<WizardController>();
 
-        shootingDir = transform.position - new Vector3(player.transform.position.x, player.transform.position.y  0);
-        shootingDir = transform.position - new Vector3(player.transform.position.x, player.transform.position.y, 0);
-        shootingDir = transform.position - new Vector3(player.transform.position.x, -player.transform.position.y - 1000, 0);
+        shootingDir =  new Vector3(player.transform.position.x,player.transform.position.y , 0) - posToInitBullet.transform.position ;
+        shootingDir2 =  new Vector3(player.transform.position.x, player.transform.position.y+7,0) - posToInitBullet.transform.position;
+        shootingDir3 = new Vector3(player.transform.position.x, player.transform.position.y -7,0) - posToInitBullet.transform.position;
 
         //Calculem els graus que rotarem per apuntar a la direcció
         rotZ = Mathf.Atan2(shootingDir.y, shootingDir.x) * Mathf.Rad2Deg + 90f;
+        rotZ2 = Mathf.Atan2(shootingDir2.y, shootingDir2.x) * Mathf.Rad2Deg + 90f;
+        rotZ3 = Mathf.Atan2(shootingDir3.y, shootingDir3.x) * Mathf.Rad2Deg + 90f;
+
 
         if (cooldown <= 0)
         {
@@ -48,24 +56,20 @@ public class WizardWeapon2 : MonoBehaviour
         }
 
 
-
-
-        if (canAtak == true)
+        if (canAtak == true && wz.wiz2atac)
         {
             Attack();
+            wizard2.GetComponent<Animator>().SetTrigger("Atak");
 
         }
-
-
-
 
     }
 
     private void Attack()
     {
         Instantiate(bullet, posToInitBullet.transform.position, Quaternion.Euler(0f, 0f, rotZ)).GetComponent<FireWizControl>().SetUp(shootingDir);
-        Instantiate(bullet, posToInitBullet.transform.position, Quaternion.Euler(0f, 0f, rotZ)).GetComponent<FireWizControl>().SetUp(shootingDir2);
-        Instantiate(bullet, posToInitBullet.transform.position, Quaternion.Euler(0f, 0f, rotZ)).GetComponent<FireWizControl>().SetUp(shootingDir3);
+        Instantiate(bullet, posToInitBullet.transform.position, Quaternion.Euler(0f, 0f, rotZ2)).GetComponent<FireWizControl>().SetUp(shootingDir2);
+        Instantiate(bullet, posToInitBullet.transform.position, Quaternion.Euler(0f, 0f, rotZ3)).GetComponent<FireWizControl>().SetUp(shootingDir3);
 
     }
 

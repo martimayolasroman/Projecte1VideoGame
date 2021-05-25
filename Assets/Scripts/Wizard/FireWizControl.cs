@@ -53,41 +53,33 @@ public class FireWizControl : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        //    if (collision.gameObject.tag == "Player")
-        //    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (dragon)
+            {
+                collision.gameObject.GetComponent<PlayerMovment>().DieP1();
+                Destroy(gameObject);
 
+            }
+            else
+            {
+                collision.gameObject.GetComponent<Player2Moviment>().DieP2();
+                Destroy(gameObject);
+            }
 
-        //        if (dragon)//Kknight
-        //        {
+        }
 
-        //            Player.GetComponent<Animator>().SetTrigger("isStuned");
-        //            Player.GetComponent<PlayerMovment>().StopPlayer();
-        //        }
-        //        else//Drag
-        //        {
-        //            Player.GetComponent<Animator>().SetTrigger("isStuned");
-        //            Player.GetComponent<Player2Moviment>().StopPlayer();
+        if (collision.gameObject.tag == "Parry")
+        {
+            Destroy(gameObject);
 
-        //        }
-        //        DestroyBullet();
+        }
 
-        //    }
-        //    if (collision.gameObject.tag == "Parry")
-        //    {
-        //        DestroyBullet();
+        if (collision.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);
 
-        //    }
-
-        //    if (collision.gameObject.tag == "Ground")
-        //    {
-
-        //        DestroyBullet();
-        //    }
-        //    if (collision.gameObject.tag == "Fire")
-        //    {
-
-        //        DestroyBullet();
-        //    }
-        //}
+        }
     }
 }
+
