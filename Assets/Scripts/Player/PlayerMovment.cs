@@ -51,7 +51,7 @@ public class PlayerMovment : MonoBehaviour
     public bool canChangeSpeed = false;
     bool moveDie = false;
 
-
+    AudioSource audioData;
 
 
     // Start is called before the first frame update
@@ -68,6 +68,7 @@ public class PlayerMovment : MonoBehaviour
         Fade.SetActive(false);
         capcol = GetComponent<CapsuleCollider2D>();
         DieMenu.SetActive(false);
+        audioData = GetComponent<AudioSource>();
 
     }
 
@@ -89,7 +90,9 @@ public class PlayerMovment : MonoBehaviour
         // SALT
         if (Input.GetButtonDown("Jump")  /*|| touchPos.x > 0*/)
         {
+            
             DoJump();
+            
         }
 
         if (startBuffering) StartCoroutine(JumpBuffering());
@@ -198,16 +201,19 @@ public class PlayerMovment : MonoBehaviour
                                           // i no ha recuperat l'us del dash (pq no l ha acabat mentre estava al terra) i pot confodre al jugador,
                                           // aixi que faig que mentre estigui fent el dash no pugui saltar per evita
         {
+            
             Jump();
         }
         else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 vol dir que no esta fen dash
         {
+            
             Jump();
             extraJumps--;
         }
 
         else if (isInCoyoteTime)
         {
+            
             Jump();
             isInCoyoteTime = false;
         }

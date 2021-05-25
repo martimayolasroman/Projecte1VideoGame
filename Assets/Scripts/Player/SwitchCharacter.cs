@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class SwitchCharacter : MonoBehaviour
 {
     // References to Controlled game objects
 
-
+    AudioSource audioData;
 
     public Vector2 pos;
 
@@ -51,6 +52,7 @@ public class SwitchCharacter : MonoBehaviour
         Attak1B.SetActive(true);
         Attak2B.SetActive(false);
         BlackFiltre.GetComponent<Image>();
+        audioData = GetComponent<AudioSource>();
 
     }
 
@@ -181,6 +183,7 @@ public class SwitchCharacter : MonoBehaviour
 
             else if (dragonn == false)
             {
+                SoundManagerScript.PlaySound("drakeTrans");
                 Personaje2.GetComponent<Animator>().SetTrigger("Change");
                 StartCoroutine(changeChar(0.5f, true));
                 dragonn = true;

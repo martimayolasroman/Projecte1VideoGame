@@ -966,6 +966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 236603304}
   - component: {fileID: 236603305}
+  - component: {fileID: 236603306}
   m_Layer: 0
   m_Name: WizardController
   m_TagString: Untagged
@@ -1005,6 +1006,22 @@ MonoBehaviour:
   wiza1: {fileID: 878619664}
   wiza2: {fileID: 1472146897}
   wiza3: {fileID: 1879817862}
+--- !u!114 &236603306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236603303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158862d65b156ad4d8094ec387e8ee65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wizanim: {fileID: 0}
+  startCooldown: 2
+  bullet: {fileID: 2754375408564864074, guid: 7ce9e0164377fd94d882d5122ae3a4e2, type: 3}
+  posToInitBullet: {fileID: 1472146897}
 --- !u!1 &247818750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1316,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3
   canMove: 0
+  FirstCounter: {fileID: 0}
+  SecondCounter: {fileID: 0}
+  ThirdCounter: {fileID: 0}
 --- !u!61 &314771043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2855,8 +2875,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594049257}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.98, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -39.98, y: 0.03, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1813004166}
   m_RootOrder: 1
@@ -2900,7 +2920,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: fa8f3d6f29b3e14438bd88bd2b0e7beb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf51456167eb78047a1878ed9cdb1b37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13259,7 +13279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878619664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.96, y: 1.11, z: 0}
+  m_LocalPosition: {x: -12.89, y: 1.11, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 236603304}
@@ -16016,7 +16036,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472146897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.85, y: 1.0500001, z: 0}
+  m_LocalPosition: {x: -12.780001, y: 1.0500001, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 236603304}
@@ -18610,6 +18630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9581a006d17cf54dafc507265c73155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  victoryMenu: {fileID: 0}
 --- !u!61 &1812084058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19183,7 +19204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879817862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.05, y: 0.87999994, z: 0}
+  m_LocalPosition: {x: -12.9800005, y: 0.87999994, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 236603304}
