@@ -169,7 +169,7 @@ public class SwitchCharacter : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true || joyButton2.Pressed && canshift == true && energyBarScript.energy >0 || ((Input.GetKeyDown(KeyCode.LeftShift) && !dragonn && canshift == true)) || (joyButton2.Pressed && canshift == true && !dragonn)) 
+        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true || joyButton2.Pressed && canshift == true && energyBarScript.energy > 0 || ((Input.GetKeyDown(KeyCode.LeftShift) && dragonn && canshift == true)) || (joyButton2.Pressed && canshift == true && !dragonn)) 
         {
             canshift = false;
            // changeChar(dragon);
