@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 
 public class SwitchCharacter : MonoBehaviour
 {
     // References to Controlled game objects
 
+    private AudioSource audioPlayer;
 
+    public AudioClip TransToDrake;
 
     public Vector2 pos;
 
@@ -51,6 +55,7 @@ public class SwitchCharacter : MonoBehaviour
         Attak1B.SetActive(true);
         Attak2B.SetActive(false);
         BlackFiltre.GetComponent<Image>();
+        audioPlayer = GetComponent<AudioSource>();
 
     }
 
@@ -167,13 +172,16 @@ public class SwitchCharacter : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true || joyButton2.Pressed && canshift == true && energyBarScript.energy >0 || ((Input.GetKeyDown(KeyCode.LeftShift) && !dragonn && canshift == true)) || (joyButton2.Pressed && canshift == true && !dragonn)) 
+        if (Input.GetKeyDown(KeyCode.LeftShift)  && canshift ==true || joyButton2.Pressed && canshift == true && energyBarScript.energy > 0 || ((Input.GetKeyDown(KeyCode.LeftShift) && dragonn && canshift == true)) || (joyButton2.Pressed && canshift == true && !dragonn)) 
         {
             canshift = false;
-           // changeChar(dragon);
+            // changeChar(dragon);
+            
 
             if (dragonn == true)
             {
+                audioPlayer.clip = TransToDrake;
+                audioPlayer.Play();
                 Personaje1.GetComponent<Animator>().SetTrigger("Change");
                 StartCoroutine(changeChar(0.6f, false));
                 dragonn = false;
@@ -181,6 +189,8 @@ public class SwitchCharacter : MonoBehaviour
 
             else if (dragonn == false)
             {
+
+                
                 Personaje2.GetComponent<Animator>().SetTrigger("Change");
                 StartCoroutine(changeChar(0.5f, true));
                 dragonn = true;
