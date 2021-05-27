@@ -21,12 +21,15 @@ public class Weapon : MonoBehaviour
     
     bool active;
 
+    private AudioSource audioPlayer;
+    public AudioClip FireClip;
+
     private void Start()
     {
         active = true;
         cooldown = startCooldown;
         handle.GetComponent<Image>().fillAmount = 1;
-
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -46,6 +49,8 @@ public class Weapon : MonoBehaviour
             {
                 //Animació de disparar
                 //player.anim.SetTrigger("isAttacking");
+                audioPlayer.clip = FireClip;
+                audioPlayer.Play();
                 Shoot();
                 cooldown = 0;
             }
@@ -71,6 +76,7 @@ public class Weapon : MonoBehaviour
     {
         //Instantiate(bullet, transform.position, transform.rotation).GetComponent<Rigidbody2D>().AddForce(Vector2.right * 15, ForceMode2D.Impulse);
         //Instantiate(bullet, transform.position, transform.rotation).GetComponent<Rigidbody2D>().AddForce(shootingDir.normalized * 20, ForceMode2D.Impulse);
+   
         player.GetComponent<Animator>().SetTrigger("Atak");
         Instantiate(bullet, transform.position, transform.rotation).GetComponent<ShootController>().SetUp(joystickPress.GetComponent<ButtonAttakDragon>().pos);
         handle.GetComponent<Image>().fillAmount = 0;

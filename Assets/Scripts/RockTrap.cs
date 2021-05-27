@@ -5,7 +5,8 @@ using UnityEngine;
 public class RockTrap : MonoBehaviour
 {
 
-
+    private AudioSource audioPlayer;
+    public AudioClip RockClip;
 
     Animator rockAnim;
    
@@ -14,8 +15,8 @@ public class RockTrap : MonoBehaviour
     void Start()
     {
         rockAnim = gameObject.GetComponent<Animator>();
-      
-        
+        audioPlayer = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
