@@ -53,6 +53,7 @@ public class PlayerMovment : MonoBehaviour
 
     private AudioSource audioPlayer;
     public AudioClip JumpClip;
+    public AudioClip Espada;
 
 
     // Start is called before the first frame update

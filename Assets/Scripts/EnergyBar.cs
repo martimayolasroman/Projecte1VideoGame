@@ -12,6 +12,8 @@ public class EnergyBar : MonoBehaviour
     SwitchCharacter sw;
     bool dragon;
 
+    
+
 
     public float energy, maxEnergy = 10;
 
@@ -26,6 +28,7 @@ public class EnergyBar : MonoBehaviour
         timeLeft = maxTime;
         sw = FindObjectOfType<SwitchCharacter>();
         dragon = sw.dragonn;
+        
     }
 
     // Update is called once per frame
@@ -56,8 +59,9 @@ public class EnergyBar : MonoBehaviour
     public void EnergyBarFiller()
     {
         
-        for(int i = 0; i < EnergyPoints.Length; i++)
+        for (int i = 0; i < EnergyPoints.Length; i++)
         {
+            
             EnergyPoints[i].enabled = !DisplayEnergyPoints(energy, i);
         }
     }
