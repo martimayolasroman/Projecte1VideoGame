@@ -51,6 +51,9 @@ public class Player2Moviment : MonoBehaviour
     bool canJump = true;
     bool moveDie = false;
 
+    private AudioSource audioPlayer;
+    public AudioClip JumpClip;
+
 
 
 
@@ -71,6 +74,7 @@ public class Player2Moviment : MonoBehaviour
         Fade.SetActive(false);
         capcol = GetComponent<CapsuleCollider2D>();
         DieMenu.SetActive(false);
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -178,6 +182,8 @@ public class Player2Moviment : MonoBehaviour
 
         if (canJump)
         {
+            audioPlayer.clip = JumpClip;
+            audioPlayer.Play();
             rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
             rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
         }
