@@ -15,12 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/OPTIONS.unity
     guid: dd29653e5b69367418d993d1ac19033a
   - enabled: 1
-    path: Assets/Scenes/TutorialScene.unity
-    guid: abab0484c23051c4daa03e19f51be1c3
+    path: Assets/Scenes/PrototypLevel.unity
+    guid: 12850a301cb00f74fa9127093f7d8979
   - enabled: 1
     path: Assets/Scenes/LEVEL2F.unity
     guid: 1086443448a608944b153ae1379282de
-  - enabled: 0
-    path: Assets/Scenes/PrototypLevel.unity
-    guid: 12850a301cb00f74fa9127093f7d8979
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: abab0484c23051c4daa03e19f51be1c3
   m_configObjects: {}
