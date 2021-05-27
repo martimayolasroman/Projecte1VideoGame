@@ -8,6 +8,7 @@ public class TutorialScript : MonoBehaviour
 {
 
     private int countTutorial = 0;
+    public Image Blur;
     //----TutorialBox1
     public Image MovmentTutorial;
     public Image ArrowTouchPad;
@@ -44,6 +45,7 @@ public class TutorialScript : MonoBehaviour
     void Start()
     {
         SkipButton.SetActive(false);
+        Blur.enabled= false;
         //----TutorialBox1
         MovmentTutorial.enabled = false;
         ArrowTouchPad.enabled = false;
@@ -91,6 +93,7 @@ public class TutorialScript : MonoBehaviour
                     ArrowParry.enabled = true;
                     SkipButton.SetActive(true);
                     TB1BB.GetComponent<BoxCollider2D>().enabled = false;
+                    Blur.enabled = true;
                     countTutorial++;
                     break;
                 case 1:
@@ -98,6 +101,7 @@ public class TutorialScript : MonoBehaviour
                     ArrowFire.enabled = true;
                     SkipButton.SetActive(true);
                     TB2BB.GetComponent<BoxCollider2D>().enabled = false;
+                    Blur.enabled = true;
                     countTutorial++;
                     break;
 
@@ -106,6 +110,7 @@ public class TutorialScript : MonoBehaviour
                     ArrowOrb.enabled = true;
                     SkipButton.SetActive(true);
                     TB3BB.GetComponent<BoxCollider2D>().enabled = false;
+                    Blur.enabled = true;
                     countTutorial++;
                     break;
                 case 3:
@@ -116,6 +121,7 @@ public class TutorialScript : MonoBehaviour
                     ArrowWall.enabled = true;
                     SkipButton.SetActive(true);
                     TB4BB.GetComponent<BoxCollider2D>().enabled = false;
+                    Blur.enabled = true;
                     countTutorial++;
                     break;
 
@@ -123,6 +129,7 @@ public class TutorialScript : MonoBehaviour
                     tutorialBox5.enabled = true;
                     SkipButton.SetActive(true);
                     TB5BB.GetComponent<BoxCollider2D>().enabled = false;
+                    Blur.enabled = true;
                     countTutorial++;
                     break;
             }
@@ -133,6 +140,7 @@ public class TutorialScript : MonoBehaviour
     public void Skip()
     {
         Time.timeScale = 1;
+        Blur.enabled = false;
         MovmentTutorial.enabled = false;
         ArrowTouchPad.enabled = false;
         ArrowJump.enabled = false;
