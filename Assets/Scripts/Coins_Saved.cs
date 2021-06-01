@@ -22,9 +22,6 @@ public class Coins_Saved : MonoBehaviour
 
     }
 
-
-
-
     private void WakeUp()
     {
 
