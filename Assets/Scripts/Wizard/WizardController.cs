@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WizardController : MonoBehaviour
 {
+
+    public GameObject SlowPS;
+ 
     // Start is called before the first frame update
     public GameObject wiza1;
     public GameObject wiza2;
@@ -35,6 +38,7 @@ public class WizardController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         sw = FindObjectOfType<SwitchCharacter>();
+       
 
     }
 
@@ -202,13 +206,20 @@ public class WizardController : MonoBehaviour
         wiza3.GetComponent<Animator>().SetTrigger("Atak");
         if (sw.dragonn)
         {
-
+            
+            GameObject Slow = Instantiate(SlowPS, new Vector3(player.transform.position.x-5, player.transform.position.y+5, player.transform.position.z), Quaternion.identity);
+            Debug.Log(player.transform.position.x);
+            Debug.Log(player.transform.position.y);
+            Debug.Log(player.transform.position.z);
+            Slow.GetComponent<ParticleSystem>().Play();
             player.GetComponent<PlayerMovment>().speed = 7;
 
         }
         else
         {
             player.GetComponent<Player2Moviment>().speed = 7;
+            GameObject Slow = Instantiate(SlowPS, player.transform.position, Quaternion.identity);
+            Slow.GetComponent<ParticleSystem>().Play();
 
         }
         yield return new WaitForSeconds(4f);

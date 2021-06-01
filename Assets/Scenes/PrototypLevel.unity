@@ -16655,7 +16655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbeEnergyValue: 100
   EnergyBarScript: {fileID: 2116618388}
-  Orbe: {fileID: 0}
+  OrbeClip: {fileID: 0}
 --- !u!212 &756078622
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17208,7 +17208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbeEnergyValue: 100
   EnergyBarScript: {fileID: 2116618388}
-  Orbe: {fileID: 0}
+  OrbeClip: {fileID: 0}
 --- !u!212 &795951822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27891,7 +27891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbeEnergyValue: 100
   EnergyBarScript: {fileID: 2116618388}
-  Orbe: {fileID: 0}
+  OrbeClip: {fileID: 0}
 --- !u!212 &1711914332
 SpriteRenderer:
   m_ObjectHideFlags: 0

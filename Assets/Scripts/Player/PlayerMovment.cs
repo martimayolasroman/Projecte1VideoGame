@@ -182,8 +182,8 @@ public class PlayerMovment : MonoBehaviour
 
         if (canJump)
         {
-            audioPlayer.clip = JumpClip;
-            audioPlayer.Play();
+           // audioPlayer.clip = JumpClip;
+           // audioPlayer.Play();
             rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
             rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
         }
