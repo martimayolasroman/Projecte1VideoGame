@@ -51,7 +51,9 @@ public class PlayerMovment : MonoBehaviour
     public bool canChangeSpeed = false;
     bool moveDie = false;
 
-    AudioSource audioData;
+    private AudioSource audioPlayer;
+    public AudioClip JumpClip;
+    public AudioClip Espada;
 
 
     // Start is called before the first frame update
@@ -68,7 +70,7 @@ public class PlayerMovment : MonoBehaviour
         Fade.SetActive(false);
         capcol = GetComponent<CapsuleCollider2D>();
         DieMenu.SetActive(false);
-        audioData = GetComponent<AudioSource>();
+        audioPlayer = GetComponent<AudioSource>();
 
     }
 
@@ -180,6 +182,8 @@ public class PlayerMovment : MonoBehaviour
 
         if (canJump)
         {
+           // audioPlayer.clip = JumpClip;
+           // audioPlayer.Play();
             rb.velocity = new Vector2(rb.velocity.x, 0); //reset vel. y
             rb.velocity += Vector2.up * jumpForce; // add jumpForce to vel. y
         }
@@ -194,14 +198,14 @@ public class PlayerMovment : MonoBehaviour
     public void DoJump()
     {
         canJump = true;
-
+        
         if (coll.onGround && rb.drag == 0)//SALT EN TERRA
                                           //rb ==0 vol dir que no esta fent dash, si no es posa, quan el jugador esta fent el dash conta el terra i salta,
                                           //el dash acaba quan esta a l'aire, pero ha fet el dash, ha tocat el terra,
                                           // i no ha recuperat l'us del dash (pq no l ha acabat mentre estava al terra) i pot confodre al jugador,
                                           // aixi que faig que mentre estigui fent el dash no pugui saltar per evita
         {
-            
+           
             Jump();
         }
         else if (extraJumps > 0 && rb.drag == 0) //SALT EN AIRE rb==0 vol dir que no esta fen dash
@@ -227,6 +231,7 @@ public class PlayerMovment : MonoBehaviour
         //quan vols saltar i encara no estas al terra, es guarda l input per saltar en el frame que toca el terra
         else
         {
+            
             startBuffering = true;
         }
     }

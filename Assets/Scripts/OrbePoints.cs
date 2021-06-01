@@ -8,10 +8,12 @@ public class OrbePoints : MonoBehaviour
 
     public int orbeEnergyValue = 10;
     public EnergyBar EnergyBarScript;
+    private AudioSource audioPlayer;
+    public AudioClip OrbeClip;
 
     void Start()
     {
-        
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,8 +26,19 @@ public class OrbePoints : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+           // audioPlayer.clip = OrbeClip;
+           // audioPlayer.Play();
             EnergyBarScript.PlusEnergy(orbeEnergyValue);
-            gameObject.SetActive(false);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            StartCoroutine(DestroyOrbe());   
+
         }
+    }
+
+    IEnumerator DestroyOrbe()
+    {    
+        yield return new WaitForSeconds(1.5f);
+        gameObject.SetActive(false);
+       
     }
 }

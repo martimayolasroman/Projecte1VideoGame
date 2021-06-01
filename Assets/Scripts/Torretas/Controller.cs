@@ -17,10 +17,13 @@ public class Controller : MonoBehaviour
     public float directiony;
     public float directionx;
 
+    private AudioSource audioPlayer;
+    public AudioClip DisparoClip;
+
     void Start()
     {
         animator = torretAnim.GetComponent<Animator>();
-        
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,7 +50,9 @@ public class Controller : MonoBehaviour
           
             if (canAtak == true)
             {
-                Attack();
+            /*audioPlayer.clip = DisparoClip;
+            audioPlayer.Play();*/
+            Attack();
                 animator.SetBool("IsInactive", false);
 
             }

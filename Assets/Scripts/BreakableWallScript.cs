@@ -12,6 +12,8 @@ public class BreakableWallScript : MonoBehaviour
     private Animator destoyedEffect;
     SpriteRenderer mySprite;
     public GameObject ExplosionPS;
+    public GameObject WallD;
+    public GameObject WallTop;
     
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,11 @@ public class BreakableWallScript : MonoBehaviour
         {
             GameObject Exp = Instantiate(ExplosionPS, transform.position, Quaternion.identity);
             Exp.GetComponent<ParticleSystem>().Play();
-           // Instantiate(destoyedEffect, transform.position, Quaternion.identity);
+            GameObject Exp1 = Instantiate(ExplosionPS, WallD.transform.position, Quaternion.identity);
+            Exp.GetComponent<ParticleSystem>().Play();
+            GameObject Exp2 = Instantiate(ExplosionPS, WallTop.transform.position, Quaternion.identity);
+            Exp.GetComponent<ParticleSystem>().Play();
+            // Instantiate(destoyedEffect, transform.position, Quaternion.identity);
             gameObject.GetComponent<Animator>().SetTrigger("Destroy");
 
             Invoke("DestroyWall", 0.30f);
@@ -44,6 +50,8 @@ public class BreakableWallScript : MonoBehaviour
     void DestroyWall()
     {
         Destroy(gameObject);
+        Destroy(WallD);
+        Destroy(WallTop);
 
     }
 

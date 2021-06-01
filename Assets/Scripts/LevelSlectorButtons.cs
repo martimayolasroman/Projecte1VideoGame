@@ -24,7 +24,7 @@ public class LevelSlectorButtons : MonoBehaviour
     public void Level2()
     {
         SceneManager.LoadScene("LEVEL2F");
-        Debug.Log("jj");
+        
     }
 
     public void Level3()
