@@ -82,9 +82,9 @@ public class CamFollowPlayer : MonoBehaviour
         stopMoveCamera = false;
        player.GetComponent<PlayerMovment>().RestarSpeed();
         fire.GetComponent<MovmentCamera>().canMove = true;
+        tx.gameObject.SetActive(false);
         fire2.GetComponent<FireMovment_Boss>().canMove = true;
 
-        tx.gameObject.SetActive(false);
 
 
     }
