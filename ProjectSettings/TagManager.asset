@@ -13,11 +13,9 @@ TagManager:
   - ChangeSpeed
   - Parry
   - FireBall
-<<<<<<< HEAD
   - MenuManager
-=======
   - Tutorial
->>>>>>> develop
+  - Boss
   layers:
   - Default
   - TransparentFX

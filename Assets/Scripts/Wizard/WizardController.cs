@@ -18,10 +18,12 @@ public class WizardController : MonoBehaviour
     public bool wiza2active = false;
     [HideInInspector]
     public bool wiza3active = false;
-
-    private bool wiz1Right, wiz1Left;
-    private bool wiz2Right, wiz2Left;
-    private bool wiz3Right, wiz3Left;
+    [HideInInspector]
+    public bool wiz1Right, wiz1Left;
+    [HideInInspector]
+    public bool wiz2Right, wiz2Left;
+    [HideInInspector]
+    public bool wiz3Right, wiz3Left;
 
     [HideInInspector]
     public bool wiz1atac, wiz2atac, wiz3atac = false;

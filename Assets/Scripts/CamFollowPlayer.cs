@@ -16,6 +16,8 @@ public class CamFollowPlayer : MonoBehaviour
     // Start is called before the first frame update
      bool stopMoveCamera = false;
     public GameObject fire;
+    public GameObject fire2;
+
     public static CamFollowPlayer instance;
     bool timeON = false;
     public TMP_Text tx;
@@ -80,6 +82,8 @@ public class CamFollowPlayer : MonoBehaviour
         stopMoveCamera = false;
        player.GetComponent<PlayerMovment>().RestarSpeed();
         fire.GetComponent<MovmentCamera>().canMove = true;
+        fire2.GetComponent<FireMovment_Boss>().canMove = true;
+
         tx.gameObject.SetActive(false);
 
 
