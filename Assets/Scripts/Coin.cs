@@ -28,26 +28,45 @@ public class Coin : MonoBehaviour
             // GameObject effectObj = Instantiate(CoinEffect, transform.position, Quaternion.identity);
             if (gameObject.CompareTag("coin1"))
             {
+                audioPlayer.clip = CoinClip;
+                audioPlayer.Play();
                 CointCounter.instance.ChangeScore("coins1");
-                
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                StartCoroutine(DestroyCoin());
+
             }
-            if (gameObject.CompareTag("coin2"))
-            {
-                CointCounter.instance.ChangeScore("coins2");
+            if (gameObject.CompareTag("coin2")) 
                 
+            {
+                audioPlayer.clip = CoinClip;
+                audioPlayer.Play();
+                CointCounter.instance.ChangeScore("coins2");
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                StartCoroutine(DestroyCoin());
             }
             if (gameObject.CompareTag("coin3"))
             {
+                audioPlayer.clip = CoinClip;
+                audioPlayer.Play();
                 CointCounter.instance.ChangeScore("coins3");
-                
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                StartCoroutine(DestroyCoin());
+
             }
 
             //   Destroy(effectObj, 5f);
-            Destroy(gameObject);
+            //Destroy(gameObject);
             //GameObject effectObj = Instantiate(CoinEffect, this.transform.position, Quaternion.identity);
             //CoinEffect.Play();
             //Destroy(CoinEffect, 0.5f);
         }
+    }
+
+    IEnumerator DestroyCoin()
+    {
+        yield return new WaitForSeconds(1.0f);
+        gameObject.SetActive(false);
+
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)

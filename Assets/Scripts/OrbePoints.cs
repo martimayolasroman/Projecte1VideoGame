@@ -29,15 +29,16 @@ public class OrbePoints : MonoBehaviour
             audioPlayer.clip = OrbeClip;
             audioPlayer.Play();
             EnergyBarScript.PlusEnergy(orbeEnergyValue);
-            StartCoroutine(DestroyOrbe());
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            StartCoroutine(DestroyOrbe());   
 
         }
     }
 
     IEnumerator DestroyOrbe()
     {    
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1.5f);
         gameObject.SetActive(false);
-        //gameObject.GetComponent<SpriteRenderer>();
+       
     }
 }

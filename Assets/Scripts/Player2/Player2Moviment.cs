@@ -53,6 +53,7 @@ public class Player2Moviment : MonoBehaviour
 
     private AudioSource audioPlayer;
     public AudioClip JumpClip;
+    public AudioClip DieClip;
 
 
 
@@ -289,6 +290,8 @@ public class Player2Moviment : MonoBehaviour
     public void DieP2()
     {
         //MORT
+        audioPlayer.clip = DieClip;
+        audioPlayer.Play();
         StartCoroutine(DieAnimation());
     }
 
