@@ -180,8 +180,8 @@ public class SwitchCharacter : MonoBehaviour
 
             if (dragonn == true)
             {
-                //audioPlayer.clip = TransToDrake;
-               // audioPlayer.Play();
+                audioPlayer.clip = TransToDrake;
+                audioPlayer.Play();
                 Personaje1.GetComponent<Animator>().SetTrigger("Change");
                 StartCoroutine(changeChar(0.6f, false));
                 dragonn = false;

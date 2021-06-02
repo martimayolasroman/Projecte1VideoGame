@@ -26,8 +26,8 @@ public class OrbePoints : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-           // audioPlayer.clip = OrbeClip;
-           // audioPlayer.Play();
+            audioPlayer.clip = OrbeClip;
+            audioPlayer.Play();
             EnergyBarScript.PlusEnergy(orbeEnergyValue);
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             StartCoroutine(DestroyOrbe());   
