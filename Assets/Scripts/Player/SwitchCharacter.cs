@@ -14,7 +14,7 @@ public class SwitchCharacter : MonoBehaviour
     private AudioSource audioPlayer;
 
     public AudioClip TransToDrake;
-
+    public AudioClip TransToKnight;
     public Vector2 pos;
 
     public GameObject Personaje1;
@@ -189,8 +189,8 @@ public class SwitchCharacter : MonoBehaviour
 
             else if (dragonn == false)
             {
-
-                
+                audioPlayer.clip = TransToKnight;
+                audioPlayer.Play();
                 Personaje2.GetComponent<Animator>().SetTrigger("Change");
                 StartCoroutine(changeChar(0.5f, true));
                 dragonn = true;

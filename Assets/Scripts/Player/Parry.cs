@@ -24,7 +24,10 @@ public class Parry : MonoBehaviour
     bool isDoingColdown = false;
     PlayerMovment pm;
 
- 
+    private AudioSource audioPlayer;
+    public AudioClip Espada;
+
+
 
     void Start()
     {
@@ -37,6 +40,7 @@ public class Parry : MonoBehaviour
         imgageJoy.GetComponent<Image>().fillAmount = 1;
         cooldown = startCooldown;
         pm = FindObjectOfType<PlayerMovment>();
+        audioPlayer = GetComponent<AudioSource>();
 
     }
 
@@ -53,6 +57,8 @@ public class Parry : MonoBehaviour
                 //player.anim.SetTrigger("isAttacking");
                 if (pm.rb.velocity.y == 0)
                 {
+                    audioPlayer.clip = Espada;
+                    audioPlayer.Play();
                     StartCoroutine(Parrying());
                     cooldown = 0;
                 }

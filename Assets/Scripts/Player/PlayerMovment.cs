@@ -53,7 +53,7 @@ public class PlayerMovment : MonoBehaviour
 
     private AudioSource audioPlayer;
     public AudioClip JumpClip;
-    public AudioClip Espada;
+    public AudioClip moving;
 
 
     // Start is called before the first frame update
@@ -170,6 +170,8 @@ public class PlayerMovment : MonoBehaviour
     {
         if (!canChangeSpeed)
         {
+            audioPlayer.clip = moving;
+            audioPlayer.Play();
             rb.velocity = new Vector2(joystick1.GetComponent<Joystick>().Horizontal * speed, rb.velocity.y);
             if (facingRight == false && joystick1.GetComponent<Joystick>().Horizontal > 0) Flip();
             else if (facingRight == true && joystick1.GetComponent<Joystick>().Horizontal < 0) Flip();

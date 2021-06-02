@@ -3322,6 +3322,11 @@ PrefabInstance:
       propertyPath: imgageJoy
       value: 
       objectReference: {fileID: 479084078}
+    - target: {fileID: 2037084535299998258, guid: 3642b0db1f15f424db2bc5292bbfba12,
+        type: 3}
+      propertyPath: Espada
+      value: 
+      objectReference: {fileID: 8300000, guid: bc0fb666be6dd25428b117ce73be1068, type: 3}
     - target: {fileID: 2037084535299998260, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: joystick1
@@ -3372,6 +3377,11 @@ PrefabInstance:
       propertyPath: JumpClip
       value: 
       objectReference: {fileID: 8300000, guid: 64d3e417120ab20458dcf129b8286023, type: 3}
+    - target: {fileID: 2037084535299998260, guid: 3642b0db1f15f424db2bc5292bbfba12,
+        type: 3}
+      propertyPath: moving
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2037084535299998261, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: m_IsTrigger
@@ -3608,6 +3618,11 @@ PrefabInstance:
       propertyPath: TransToDrake
       value: 
       objectReference: {fileID: 8300000, guid: 7c26f8c8547348d4f825c22829b73307, type: 3}
+    - target: {fileID: 2037084536048171621, guid: 3642b0db1f15f424db2bc5292bbfba12,
+        type: 3}
+      propertyPath: TransToKnight
+      value: 
+      objectReference: {fileID: 8300000, guid: e141d7931b2ac7a4da5be3ee6ea8e255, type: 3}
     - target: {fileID: 2037084536589579745, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: m_IsActive
@@ -4835,6 +4850,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: -10}
   smoothFactor: 5.43
   fire: {fileID: 314771039}
+  fire2: {fileID: 0}
   tx: {fileID: 848550073}
 --- !u!114 &570508065
 MonoBehaviour:

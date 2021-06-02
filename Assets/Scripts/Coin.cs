@@ -59,19 +59,25 @@ public class Coin : MonoBehaviour
 
                 if (gameObject.CompareTag("coin1"))
                 {
+                
                     CointCounter.instance.ChangeScore("coins1");
                     menuManager.coins[5] = true;
+                
                 }
                 if (gameObject.CompareTag("coin2"))
                 {
+                   
                     CointCounter.instance.ChangeScore("coins2");
                     menuManager.coins[6] = true;
+                    
 
                 }
                 if (gameObject.CompareTag("coin3"))
                 {
+                    
                     CointCounter.instance.ChangeScore("coins3");
                     menuManager.coins[7] = true;
+                    
 
                 }
 
@@ -83,18 +89,18 @@ public class Coin : MonoBehaviour
             // GameObject effectObj = Instantiate(CoinEffect, transform.position, Quaternion.identity);
             if (gameObject.CompareTag("coin1"))
             {
-                audioPlayer.clip = CoinClip;
-                audioPlayer.Play();
+                /*audioPlayer.clip = CoinClip;
+                audioPlayer.Play();*/
                 CointCounter.instance.ChangeScore("coins1");
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+               gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 StartCoroutine(DestroyCoin());
 
             }
             if (gameObject.CompareTag("coin2")) 
                 
             {
-                audioPlayer.clip = CoinClip;
-                audioPlayer.Play();
+               /* audioPlayer.clip = CoinClip;
+                audioPlayer.Play();*/
                 CointCounter.instance.ChangeScore("coins2");
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 StartCoroutine(DestroyCoin());
@@ -128,8 +134,8 @@ public class Coin : MonoBehaviour
 
                 Destroy(gameObject);
 
-                audioPlayer.clip = CoinClip;
-                audioPlayer.Play();
+               /* audioPlayer.clip = CoinClip;
+                audioPlayer.Play();*/
                 CointCounter.instance.ChangeScore("coins3");
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 StartCoroutine(DestroyCoin());
