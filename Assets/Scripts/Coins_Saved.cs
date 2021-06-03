@@ -8,6 +8,8 @@ public class Coins_Saved : MonoBehaviour
 {
 
     public bool[] coins;
+    public int coinValue = 0;
+
     void Start()
     {
 
