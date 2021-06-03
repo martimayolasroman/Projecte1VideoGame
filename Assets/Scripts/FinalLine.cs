@@ -38,7 +38,7 @@ public class FinalLine : MonoBehaviour
                         menuManager.coins[1] = true;
                     }
                 }
-                if (menuManager.coinValue == 2)
+                else if (menuManager.coinValue == 2)
                 {
                     if (menuManager.coins[3] == false)
                     {
@@ -46,7 +46,7 @@ public class FinalLine : MonoBehaviour
                     }
 
                 }
-                if (menuManager.coinValue == 3)
+                else if (menuManager.coinValue == 3)
                 {
                     menuManager.coins[3] = true;
 
@@ -98,7 +98,7 @@ public class FinalLine : MonoBehaviour
                         menuManager.coins[9] = true;
                     }
                 }
-                if (menuManager.coinValue == 2)
+                else if (menuManager.coinValue == 2)
                 {
                     if (menuManager.coins[11] == false)
                     {
@@ -106,7 +106,7 @@ public class FinalLine : MonoBehaviour
                     }
 
                 }
-                if (menuManager.coinValue == 3)
+                else if (menuManager.coinValue == 3)
                 {
                     menuManager.coins[11] = true;
 
@@ -129,7 +129,7 @@ public class FinalLine : MonoBehaviour
                         menuManager.coins[13] = true;
                     }
                 }
-                if (menuManager.coinValue == 2)
+                else if (menuManager.coinValue == 2)
                 {
                     if (menuManager.coins[15] == false)
                     {
@@ -137,7 +137,7 @@ public class FinalLine : MonoBehaviour
                     }
 
                 }
-                if (menuManager.coinValue == 3)
+                else if (menuManager.coinValue == 3)
                 {
                     menuManager.coins[15] = true;
 
