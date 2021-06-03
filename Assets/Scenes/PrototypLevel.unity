@@ -22079,7 +22079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c211965bdb2d745a270d868c848d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 425766130}
   fire: {fileID: 314771039}
 --- !u!1001 &1453844763
 PrefabInstance:
