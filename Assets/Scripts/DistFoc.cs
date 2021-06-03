@@ -24,6 +24,7 @@ public class DistFoc : MonoBehaviour
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        
 
         dist = CalculateDist();
 
