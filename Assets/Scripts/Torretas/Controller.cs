@@ -50,8 +50,8 @@ public class Controller : MonoBehaviour
           
             if (canAtak == true)
             {
-            /*audioPlayer.clip = DisparoClip;
-            audioPlayer.Play();*/
+            audioPlayer.clip = DisparoClip;
+            audioPlayer.Play();
             Attack();
                 animator.SetBool("IsInactive", false);
 
