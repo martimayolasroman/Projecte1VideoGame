@@ -21,7 +21,7 @@ public class VICTORYMENU : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene("LEVEL 2");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1;
         victoryMenu.SetActive(false);
 
