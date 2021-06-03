@@ -6,10 +6,9 @@ using UnityEngine.SceneManagement;
 public class Coin : MonoBehaviour
 {
 
-    public int coinValue = 1;
     public GameObject CoinEffect;
     Coins_Saved menuManager;
-
+    bool ischangedlevel  = false;
     private AudioSource audioPlayer;
     public AudioClip CoinClip;
 
@@ -26,24 +25,29 @@ public class Coin : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "PrototypLevel")
         {
+            if (ischangedlevel == false)
+            {
+                menuManager.coinValue = 0;
+                ischangedlevel = true;
+            }
             if (collision.gameObject.CompareTag("Player"))
             {
 
                 if (gameObject.CompareTag("coin1"))
                 {
                     CointCounter.instance.ChangeScore("coins1");
-                    menuManager.coins[1] = true;
+                    menuManager.coinValue++;
                 }
                 if (gameObject.CompareTag("coin2"))
                 {
                     CointCounter.instance.ChangeScore("coins2");
-                    menuManager.coins[2] = true;
+                    menuManager.coinValue++;
 
                 }
                 if (gameObject.CompareTag("coin3"))
                 {
                     CointCounter.instance.ChangeScore("coins3");
-                    menuManager.coins[3] = true;
+                    menuManager.coinValue++;
 
                 }
 
@@ -54,122 +58,111 @@ public class Coin : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "LEVEL2F")
         {
+
+            if (ischangedlevel == false)
+            {
+                menuManager.coinValue = 0;
+                ischangedlevel = true;
+            }
             if (collision.gameObject.CompareTag("Player"))
             {
 
                 if (gameObject.CompareTag("coin1"))
                 {
-                
+                    menuManager.coinValue++;
                     CointCounter.instance.ChangeScore("coins1");
-                    menuManager.coins[5] = true;
-                
+
                 }
                 if (gameObject.CompareTag("coin2"))
                 {
-                   
+
                     CointCounter.instance.ChangeScore("coins2");
-                    menuManager.coins[6] = true;
-                    
+                    menuManager.coinValue++;
+
 
                 }
                 if (gameObject.CompareTag("coin3"))
                 {
-                    
+
                     CointCounter.instance.ChangeScore("coins3");
-                    menuManager.coins[7] = true;
-                    
+                    menuManager.coinValue++;
 
                 }
 
                 Destroy(gameObject);
-
-
-            
-            // ScoreManager.instance.changeScore(coinValue);
-            // GameObject effectObj = Instantiate(CoinEffect, transform.position, Quaternion.identity);
-            if (gameObject.CompareTag("coin1"))
-            {
-                /*audioPlayer.clip = CoinClip;
-                audioPlayer.Play();*/
-                CointCounter.instance.ChangeScore("coins1");
-               gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                StartCoroutine(DestroyCoin());
-
-            }
-            if (gameObject.CompareTag("coin2")) 
-                
-            {
-               /* audioPlayer.clip = CoinClip;
-                audioPlayer.Play();*/
-                CointCounter.instance.ChangeScore("coins2");
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                StartCoroutine(DestroyCoin());
-
             }
         }
 
         if (SceneManager.GetActiveScene().name == "Level3")
         {
+
+            if (ischangedlevel == false)
+            {
+                menuManager.coinValue = 0;
+                ischangedlevel = true;
+            }
             if (collision.gameObject.CompareTag("Player"))
             {
 
 
                 if (gameObject.CompareTag("coin1"))
                 {
+                    menuManager.coinValue++;
                     CointCounter.instance.ChangeScore("coins1");
-                    menuManager.coins[9] = true;
                 }
                 if (gameObject.CompareTag("coin2"))
                 {
+                    menuManager.coinValue++;
                     CointCounter.instance.ChangeScore("coins2");
-                    menuManager.coins[10] = true;
 
                 }
                 if (gameObject.CompareTag("coin3"))
                 {
+                    menuManager.coinValue++;
                     CointCounter.instance.ChangeScore("coins3");
-                    menuManager.coins[11] = true;
 
                 }
 
                 Destroy(gameObject);
 
-               /* audioPlayer.clip = CoinClip;
-                audioPlayer.Play();*/
-                CointCounter.instance.ChangeScore("coins3");
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                StartCoroutine(DestroyCoin());
+           
 
             }
         }
 
-
         if (SceneManager.GetActiveScene().name == "PrototypLevelBoss")
         {
+
+            if (ischangedlevel == false)
+            {
+                menuManager.coinValue = 0;
+                ischangedlevel = true;
+            }
             if (collision.gameObject.CompareTag("Player"))
             {
 
                 if (gameObject.CompareTag("coin1"))
                 {
                     CointCounter.instance.ChangeScore("coins1");
-                    menuManager.coins[13] = true;
+                    menuManager.coinValue++;
+
                 }
                 if (gameObject.CompareTag("coin2"))
                 {
                     CointCounter.instance.ChangeScore("coins2");
-                    menuManager.coins[14] = true;
+                    menuManager.coinValue++;
 
                 }
                 if (gameObject.CompareTag("coin3"))
                 {
                     CointCounter.instance.ChangeScore("coins3");
-                    menuManager.coins[15] = true;
+                    menuManager.coinValue++;
 
                 }
 
                 Destroy(gameObject);
 
-            }
+            
         }
     }
 
@@ -179,7 +172,7 @@ public class Coin : MonoBehaviour
             //GameObject effectObj = Instantiate(CoinEffect, this.transform.position, Quaternion.identity);
             //CoinEffect.Play();
             //Destroy(CoinEffect, 0.5f);
-        }
+    }
 
     IEnumerator DestroyCoin()
     {
