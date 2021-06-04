@@ -29,6 +29,8 @@ public class WizardController : MonoBehaviour
     public bool wiz1atac, wiz2atac, wiz3atac = false;
 
     GameObject player;
+    public GameObject player1;
+    public GameObject player2;
     SwitchCharacter sw;
 
     public GameObject clouds, thunder;
@@ -209,19 +211,16 @@ public class WizardController : MonoBehaviour
         if (sw.dragonn)
         {
             
-            GameObject Slow = Instantiate(SlowPS, new Vector3(player.transform.position.x-5, player.transform.position.y+5, player.transform.position.z), Quaternion.identity);
-            Debug.Log(player.transform.position.x);
-            Debug.Log(player.transform.position.y);
-            Debug.Log(player.transform.position.z);
-            Slow.GetComponent<ParticleSystem>().Play();
+            
             player.GetComponent<PlayerMovment>().speed = 7;
+            Instantiate(SlowPS, player2.transform.position, Quaternion.identity);
 
         }
         else
         {
             player.GetComponent<Player2Moviment>().speed = 7;
-            GameObject Slow = Instantiate(SlowPS, player.transform.position, Quaternion.identity);
-            Slow.GetComponent<ParticleSystem>().Play();
+            Instantiate(SlowPS, player1.transform.position, Quaternion.identity);
+
 
         }
         yield return new WaitForSeconds(4f);
