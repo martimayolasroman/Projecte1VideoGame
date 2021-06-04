@@ -20,6 +20,8 @@ public class Player2Moviment : MonoBehaviour
     public GameObject DieMenu;
     private CapsuleCollider2D capcol;
     public GameObject RunSmoke;
+    Coins_Saved menuManager;
+
 
 
     //stats
@@ -76,6 +78,8 @@ public class Player2Moviment : MonoBehaviour
         capcol = GetComponent<CapsuleCollider2D>();
         DieMenu.SetActive(false);
         audioPlayer = GetComponent<AudioSource>();
+
+        menuManager = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<Coins_Saved>();
     }
 
     // Update is called once per frame
@@ -336,6 +340,7 @@ public class Player2Moviment : MonoBehaviour
         StopPlayer();
         yield return new WaitForSeconds(2);
         DieMenu.SetActive(true);
+        menuManager.coinValue = 0;
         //MENU MUERTE
         Time.timeScale = 0;
 

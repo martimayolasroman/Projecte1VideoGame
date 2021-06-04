@@ -8,6 +8,8 @@ public class FinalLine : MonoBehaviour
     // Start is called before the first frame update
     public GameObject victoryMenu;
     Coins_Saved menuManager;
+    private bool canChange;
+
 
     void Start()
     {
@@ -19,8 +21,10 @@ public class FinalLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -121,7 +125,7 @@ public class FinalLine : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "PrototypLevelBoss")
             {
 
-
+               
                 if (menuManager.coinValue == 1)
                 {
                     if (menuManager.coins[14] == false && menuManager.coins[15] == false)
@@ -148,6 +152,10 @@ public class FinalLine : MonoBehaviour
 
                 
             }
+
+            menuManager.coinValue = 0; 
         }
+            
+        
     }
 }
