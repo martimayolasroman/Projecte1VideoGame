@@ -35,7 +35,7 @@ public class LevelSlectorButtons : MonoBehaviour
 
     public void Level4()
     {
-        SceneManager.LoadScene("PrototypLevelBoss");
+        SceneManager.LoadScene("BOSS");
 
     }
 }

@@ -59,6 +59,6 @@ public class LEVELBUTTPLAY : MonoBehaviour
         b4.SetActive(true);
         b1.SetActive(false);
         b3.SetActive(false);
-        b4.SetActive(false);
+        b2.SetActive(false);
     }
 }
