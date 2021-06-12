@@ -1055,38 +1055,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 183700289}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &52222406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52222403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab640dcfc5832d94f97a63ded7ce9c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Blur: {fileID: 0}
-  MovmentTutorial: {fileID: 0}
-  ArrowTouchPad: {fileID: 0}
-  ArrowJump: {fileID: 0}
-  ArrowParry: {fileID: 0}
-  TB1BB: {fileID: 0}
-  SkipButton: {fileID: 0}
-  Fire: {fileID: 0}
-  ArrowFire: {fileID: 0}
-  TB2BB: {fileID: 0}
-  tutorialBox3: {fileID: 0}
-  ArrowOrb: {fileID: 0}
-  TB3BB: {fileID: 0}
-  tutorialBox4: {fileID: 0}
-  ArrowTransform: {fileID: 0}
-  ArrowEnerBar: {fileID: 0}
-  ArrowWall: {fileID: 0}
-  TB4BB: {fileID: 0}
-  tutorialBox5: {fileID: 0}
-  TB5BB: {fileID: 0}
 --- !u!82 &52222407
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2673,6 +2641,12 @@ PrefabInstance:
       propertyPath: JumpClip
       value: 
       objectReference: {fileID: 8300000, guid: 64d3e417120ab20458dcf129b8286023, type: 3}
+    - target: {fileID: 2037084535299998260, guid: 3642b0db1f15f424db2bc5292bbfba12,
+        type: 3}
+      propertyPath: SlowPS
+      value: 
+      objectReference: {fileID: 30358933663533118, guid: cb1e558dcd4a4494ebfff16868c89f0b,
+        type: 3}
     - target: {fileID: 2037084535299998261, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: m_IsTrigger
@@ -2743,6 +2717,12 @@ PrefabInstance:
       propertyPath: JumpClip
       value: 
       objectReference: {fileID: 8300000, guid: 64d3e417120ab20458dcf129b8286023, type: 3}
+    - target: {fileID: 2037084535959570082, guid: 3642b0db1f15f424db2bc5292bbfba12,
+        type: 3}
+      propertyPath: SlowPS
+      value: 
+      objectReference: {fileID: 30358933663533118, guid: cb1e558dcd4a4494ebfff16868c89f0b,
+        type: 3}
     - target: {fileID: 2037084535959570084, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: m_Material
@@ -2893,7 +2873,7 @@ PrefabInstance:
         type: 3}
       propertyPath: energyBarScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 743137787}
     - target: {fileID: 2037084536048171621, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: BlackSwich

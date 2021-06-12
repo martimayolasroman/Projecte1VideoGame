@@ -213,14 +213,15 @@ public class WizardController : MonoBehaviour
             
             
             player.GetComponent<PlayerMovment>().speed = 7;
-            Instantiate(SlowPS, player2.transform.position, Quaternion.identity);
+            
+
 
         }
         else
         {
             player.GetComponent<Player2Moviment>().speed = 7;
-            Instantiate(SlowPS, player1.transform.position, Quaternion.identity);
-
+            
+           
 
         }
         yield return new WaitForSeconds(4f);

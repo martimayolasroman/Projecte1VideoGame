@@ -57,7 +57,7 @@ public class Player2Moviment : MonoBehaviour
     public AudioClip JumpClip;
     public AudioClip DieClip;
 
-
+    public GameObject SlowPS;
 
 
 
@@ -165,7 +165,10 @@ public class Player2Moviment : MonoBehaviour
 
 
        
-
+        if(speed == 7)
+        {
+            SlowParticles();
+        }
 
 
 
@@ -344,5 +347,14 @@ public class Player2Moviment : MonoBehaviour
         //MENU MUERTE
         Time.timeScale = 0;
 
+    }
+
+    public void SlowParticles()
+    {
+        //Instantiate(SlowPS, transform.position, Quaternion.identity);
+
+        Debug.Log("fffff");
+        GameObject Exp = Instantiate(SlowPS,/* transform.position */new Vector3(transform.position.x,transform.position.y - 1, transform.position.z ), Quaternion.identity);
+        Exp.GetComponent<ParticleSystem>().Play();
     }
 }

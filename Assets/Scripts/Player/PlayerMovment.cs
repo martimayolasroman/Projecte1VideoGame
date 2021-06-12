@@ -58,6 +58,8 @@ public class PlayerMovment : MonoBehaviour
     public AudioClip JumpClip;
     public AudioClip moving;
 
+    public GameObject SlowPS;
+
 
     // Start is called before the first frame update
     void Start()
@@ -161,6 +163,10 @@ public class PlayerMovment : MonoBehaviour
             RunSmoke.SetActive(false);
         }
 
+        if (speed == 7)
+        {
+            SlowParticles();
+        }
 
 
 
@@ -352,6 +358,16 @@ public class PlayerMovment : MonoBehaviour
         //MENU MUERTE
         Time.timeScale = 0;
 
+    }
+
+
+    public void SlowParticles()
+    {
+        //Instantiate(SlowPS, transform.position, Quaternion.identity);
+
+        Debug.Log("dddd");
+        GameObject Exp = Instantiate(SlowPS, new Vector3(transform.position.x+0.5f, transform.position.y - 2, transform.position.z), Quaternion.identity);
+        Exp.GetComponent<ParticleSystem>().Play();
     }
 
 }
