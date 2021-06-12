@@ -17,10 +17,11 @@ public class GoToMenu : MonoBehaviour
         
     }
 
-   public void Returntomenu()
+   public void ReturntomenuPrincipal()
     {
-        Debug.Log("mmg");
         SceneManager.LoadScene("MENU");
+
+        
 
     }
 }
