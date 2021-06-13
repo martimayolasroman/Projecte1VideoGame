@@ -55,7 +55,7 @@ public class FireWizControl : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            if (dragon)
+            if (sw.dragonn)
             {
                 collision.gameObject.GetComponent<PlayerMovment>().DieP1();
                 Destroy(gameObject);

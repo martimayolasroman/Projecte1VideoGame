@@ -175,7 +175,7 @@ public class Coin : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "PrototypLevelBoss")
+        if (SceneManager.GetActiveScene().name == "BOSS")
         {
 
 
