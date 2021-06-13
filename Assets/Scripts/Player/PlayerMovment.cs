@@ -56,7 +56,8 @@ public class PlayerMovment : MonoBehaviour
 
     private AudioSource audioPlayer;
     public AudioClip JumpClip;
-    public AudioClip moving;
+    public AudioClip DieClip;
+
 
     public GameObject SlowPS;
 
@@ -179,8 +180,7 @@ public class PlayerMovment : MonoBehaviour
     {
         if (!canChangeSpeed)
         {
-            audioPlayer.clip = moving;
-            audioPlayer.Play();
+            
             rb.velocity = new Vector2(joystick1.GetComponent<Joystick>().Horizontal * speed, rb.velocity.y);
             if (facingRight == false && joystick1.GetComponent<Joystick>().Horizontal > 0) Flip();
             else if (facingRight == true && joystick1.GetComponent<Joystick>().Horizontal < 0) Flip();
@@ -300,6 +300,8 @@ public class PlayerMovment : MonoBehaviour
     public void DieP1()
     {
         //MORT
+        audioPlayer.clip = DieClip;
+        audioPlayer.Play();
         StartCoroutine(DieAnimation());
     }
 
@@ -364,10 +366,13 @@ public class PlayerMovment : MonoBehaviour
     public void SlowParticles()
     {
         //Instantiate(SlowPS, transform.position, Quaternion.identity);
-
+        /*audioPlayer.clip = Relentizar;
+        audioPlayer.Play();*/
         Debug.Log("dddd");
         GameObject Exp = Instantiate(SlowPS, new Vector3(transform.position.x+0.5f, transform.position.y - 2, transform.position.z), Quaternion.identity);
         Exp.GetComponent<ParticleSystem>().Play();
+        
+
     }
 
 }

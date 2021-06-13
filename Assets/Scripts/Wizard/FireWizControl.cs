@@ -15,10 +15,14 @@ public class FireWizControl : MonoBehaviour
     public ParticleSystem destroyEffect;
     public int orbeEnergyValue = 2;
 
+    private AudioSource audioPlayer;
+    public AudioClip Fire;
+
 
     private void Start()
     {
         sw = FindObjectOfType<SwitchCharacter>();
+        audioPlayer = GetComponent<AudioSource>();
         Player = GameObject.FindGameObjectWithTag("Player");
         dragon = sw.dragonn;
     }
@@ -35,7 +39,10 @@ public class FireWizControl : MonoBehaviour
 
 
         Invoke("DestroyBullet", lifeTime);
+        /*audioPlayer.clip = Fire;
+        audioPlayer.Play();*/
         GetComponent<Rigidbody2D>().AddForce(shootingDir.normalized * speed, ForceMode2D.Impulse);
+        
         //FindObjectOfType<AudioManager>().Play("attack");
 
     }

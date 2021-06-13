@@ -75,16 +75,25 @@ public class Coin : MonoBehaviour
     //}
     void OnTriggerEnter2D(Collider2D collision)
     {
+        
+
         if (SceneManager.GetActiveScene().name == "PrototypLevel")
         {
-
+            
             if (collision.gameObject.CompareTag("Player"))
             {
+                /* audioPlayer.clip = CoinClip;
+                 audioPlayer.Play();*/
+                gameObject.GetComponent<AudioSource>().Play();
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                StartCoroutine(DestroyCoin());
 
                 if (gameObject.CompareTag("coin1"))
                 {
+                    
                     CointCounter.instance.ChangeScore("coins1");
                     menuManager.coinValue++;
+                    
                 }
                 if (gameObject.CompareTag("coin2"))
                 {
@@ -110,9 +119,12 @@ public class Coin : MonoBehaviour
 
             if (collision.gameObject.CompareTag("Player"))
             {
-
+                gameObject.GetComponent<AudioSource>().Play();
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                StartCoroutine(DestroyCoin());
                 if (gameObject.CompareTag("coin1"))
                 {
+                    
                     menuManager.coinValue++;
                     CointCounter.instance.ChangeScore("coins1");
 
@@ -217,7 +229,7 @@ public class Coin : MonoBehaviour
 
     IEnumerator DestroyCoin()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
         gameObject.SetActive(false);
 
     }

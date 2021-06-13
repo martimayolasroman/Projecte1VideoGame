@@ -302,6 +302,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9017638275405379789, guid: 1e91bd20502a9394a86cd12bd6dc7284,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ec5fea6d01bf52a40be4108ec5fb4f09, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e91bd20502a9394a86cd12bd6dc7284, type: 3}
 --- !u!4 &19954221 stripped
@@ -1099,6 +1104,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9017638275405379789, guid: 1e91bd20502a9394a86cd12bd6dc7284,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ec5fea6d01bf52a40be4108ec5fb4f09, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e91bd20502a9394a86cd12bd6dc7284, type: 3}
 --- !u!4 &172461738 stripped
@@ -3647,6 +3657,11 @@ PrefabInstance:
       propertyPath: moving
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2037084535299998260, guid: 3642b0db1f15f424db2bc5292bbfba12,
+        type: 3}
+      propertyPath: DieClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 42bb975c1aa65fe4b967270ddaf9aaac, type: 3}
     - target: {fileID: 2037084535299998261, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: m_IsTrigger
@@ -11052,6 +11067,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9017638275405379789, guid: 1e91bd20502a9394a86cd12bd6dc7284,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ec5fea6d01bf52a40be4108ec5fb4f09, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e91bd20502a9394a86cd12bd6dc7284, type: 3}
 --- !u!4 &1117370642 stripped

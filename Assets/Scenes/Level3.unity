@@ -13355,6 +13355,11 @@ PrefabInstance:
       propertyPath: JumpClip
       value: 
       objectReference: {fileID: 8300000, guid: 64d3e417120ab20458dcf129b8286023, type: 3}
+    - target: {fileID: 2037084535299998260, guid: 3642b0db1f15f424db2bc5292bbfba12,
+        type: 3}
+      propertyPath: DieClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 42bb975c1aa65fe4b967270ddaf9aaac, type: 3}
     - target: {fileID: 2037084535299998261, guid: 3642b0db1f15f424db2bc5292bbfba12,
         type: 3}
       propertyPath: m_IsTrigger
