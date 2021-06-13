@@ -43,6 +43,12 @@ public class MAINMENU : MonoBehaviour
         SceneManager.LoadScene("MENU");
     }
 
+    public void CreditsMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("CREDITS");
+    }
+
     public void Reload()
     {
         Time.timeScale = 1;
