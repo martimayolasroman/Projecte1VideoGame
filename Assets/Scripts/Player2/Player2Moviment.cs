@@ -330,7 +330,7 @@ public class Player2Moviment : MonoBehaviour
     IEnumerator DieAnimation()
     {
         // POSICIO, FADE, TEXTO
-        mc.movementSpeed = 0;
+       // mc.movementSpeed = 0;
         StopPlayer();
         anim.SetTrigger("Die");
         //ANIMACIOPLAYER
