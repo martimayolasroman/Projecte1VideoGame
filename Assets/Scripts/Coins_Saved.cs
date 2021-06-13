@@ -9,9 +9,16 @@ public class Coins_Saved : MonoBehaviour
 
     public bool[] coins;
     public int coinValue = 0;
+    public static Coins_Saved sfxInstance;
 
     void Start()
     {
+        if (sfxInstance != null && sfxInstance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        sfxInstance = this;
 
         coins = new bool[16];
         DontDestroyOnLoad(this.gameObject);
